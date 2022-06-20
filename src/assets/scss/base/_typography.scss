@@ -3,8 +3,30 @@
 // **************************************
 @use "../utilities" as *;
 
-:is(.title__primary, .content__form, .content__logo) {
+:is(.title__primary, .content__logo) {
   text-align: center;
+}
+
+.title__primary {
+  --fp-weight-main: 400;
+  @include text-prop(
+    $size: clamp(1.8rem, 3vw, 2.5rem),
+    $f-weight: var(--fp-weight-main)
+  );
+  &--form {
+    padding: 20px;
+    background-color: var(--clr-bg-color);
+    transform: translateY(-25px);
+    border-radius: 30px;
+    &::after {
+      content: "";
+      display: block;
+      width: 80px;
+      margin: 0 auto;
+      border-bottom: 2px solid var(--clr-primary-color);
+      padding-top: 10px;
+    }
+  }
 }
 
 //h2 styles
@@ -52,22 +74,29 @@
   }
 
   &__form {
-    @include text-prop($size: clamp(0.7rem, 3vw, 1.2rem), $f-weight: 400);
-    margin-bottom: 0.5rem;
+    --fp-weight-main: 600;
+    @include text-prop(
+      $size: clamp(1.3rem, 3vw, 1.2rem),
+      $f-weight: var(--fp-weight-main),
+      $color: var(--clr-bg-dark)
+    );
+    margin-top: 2rem;
     line-height: 1.5;
-    color: #fff;
   }
 
   &__logo {
     color: var(--clr-bg-light);
     text-align: center;
     transform: translateY(-5px);
-
     @include text-prop(
       $size: clamp(0.7rem, 3vw, 1.8rem),
       $f-weight: var(--fp-weight-main),
       $color: var(--clr-bg-light)
     );
+  }
+  &__link {
+    color: var(--clr-bg-dark);
+    margin-top: 0.5rem;
   }
 }
 

@@ -6,9 +6,19 @@
 
 //flex styles
 .flex__container {
+  width: 100%;
   @include flex_me();
+  &--column {
+    @include flex_me($dir: column);
+  }
+  &--column-center {
+    @include flex_me($dir: column, $just: center);
+  }
   &--column-between {
     @include flex_me($dir: column, $just: space-between);
+  }
+  &--column-centered-fully {
+    @include flex_me($dir: column, $just: center, $vertAlign: center);
   }
   &--between {
     @include flex_me($just: space-between);
