@@ -7,6 +7,7 @@ const HeaderContainer = styled.header`
   background-color: var(--clr-bg-dark);
   position: relative;
   padding: 0rem 1.5rem;
+  z-index: -2;
   @media only screen and (min-width: 768px) {
     background-color: var(--clr-bg-color);
     padding-left: 1rem;

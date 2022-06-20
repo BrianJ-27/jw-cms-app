@@ -5,9 +5,17 @@ import HeroImage from "../hero-image/heroImg";
 
 const LoginScreenWrapper = styled.main`
   height: 100vh;
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
 `;
 
 const FormContainer = styled.div`
+  position: relative;
+  z-index: 9;
   height: 45%;
   width: 100%;
   @media only screen and (min-width: 768px) {
@@ -22,7 +30,7 @@ const ImageContainer = styled.div`
   position: relative;
   height: 55%;
   width: 100%;
-  z-index: 0;
+  z-index: 9;
   @media only screen and (min-width: 768px) {
     width: 50%;
     position: absolute;

@@ -2,16 +2,14 @@ import styled from "styled-components";
 
 // Main Dashboard Navigation Styles
 export const Navigation = styled.nav`
+  height: 100%;
+  position: relative;
   background: linear-gradient(
     to right,
     var(--clr-primary-color),
     var(--clr-bg-dark)
   );
   padding: 0 1rem 0 0.5rem;
-  @media only screen and (min-width: 768px) {
-    height: 100%;
-    position: relative;
-  }
 `;
 
 // Nav ul Styles
