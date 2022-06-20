@@ -41,6 +41,7 @@ const App = () => {
             <LoginPage
               setShowLayout={setIsLoggedIn}
               setCurrentUser={setCurrentUser}
+              setProfile={setProfile}
             />
           }
         />

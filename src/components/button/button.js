@@ -22,10 +22,16 @@ const Button = styled.button`
   &:focus-visible {
     outline: 3px dotted black;
   }
+  ${(props) =>
+    props.add_shift &&
+    css`
+      background-color: var(--clr-accent-color);
+      color: var(--clr-bg-light);
+    `};
 `;
 
-const CustomButton = ({ children }) => {
-  return <Button> {children} </Button>;
+const CustomButton = ({ children, ...otherProps }) => {
+  return <Button {...otherProps}> {children} </Button>;
 };
 
 export default CustomButton;

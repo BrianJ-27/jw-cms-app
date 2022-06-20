@@ -1,6 +1,6 @@
 import React from "react";
 import ProfileBlock from "../profile/index";
-import DashLogo from "../../logo/dashboardLogo";
+import DashLogo from "../../logo/logo";
 import styled from "styled-components";
 
 const HeaderContainer = styled.header`

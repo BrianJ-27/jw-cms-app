@@ -8,7 +8,7 @@ import {
 import { BiDoorOpen } from "react-icons/bi";
 import { Link } from "react-router-dom";
 import { NavWrapper, Navigation, NavLogoContainer } from "./Nav.styles";
-import NavLogo from "../../logo/dashboardLogo";
+import NavLogo from "../../logo/logo";
 
 const DashNav = ({
   currentUser,
