@@ -1,6 +1,6 @@
 import React from "react";
 import ProfileBlock from "../profile/index";
-import DashLogo from "../../reusable/logo/dashboardLogo";
+import DashLogo from "../../logo/dashboardLogo";
 import styled from "styled-components";
 
 const HeaderContainer = styled.header`
@@ -57,7 +57,7 @@ const LogoContainer = styled.div`
 
 const Header = ({ userProfile }) => {
   return (
-    <HeaderContainer className="header flex__container">
+    <HeaderContainer className="header flex__container--between">
       <div>
         <ScreenReaderH1>Cart Ministry Scheduler App</ScreenReaderH1>
         <p className="content__header">Welcome Back! {userProfile.firstName}</p>

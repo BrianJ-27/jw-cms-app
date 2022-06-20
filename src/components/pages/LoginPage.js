@@ -15,10 +15,13 @@ const LoginScreenWrapper = styled.main`
   right: 0;
 `;
 
-const LoginPage = () => {
+const LoginPage = ({ setShowLayout, setCurrentUser }) => {
   return (
     <LoginScreenWrapper className="section__form">
-      <FormLogin />
+      <FormLogin
+        setShowLayout={setShowLayout}
+        setCurrentUser={setCurrentUser}
+      />
     </LoginScreenWrapper>
   );
 };

@@ -6,7 +6,16 @@
 
 //flex styles
 .flex__container {
-  @include flex_me($just: space-between, $vertAlign: center);
+  @include flex_me();
+  &--column-between {
+    @include flex_me($dir: column, $just: space-between);
+  }
+  &--between {
+    @include flex_me($just: space-between);
+  }
+  &--end {
+    @include flex_me($just: flex-end);
+  }
 }
 
 /*------GRID LAYOUT STYLES-----------*/

@@ -2,9 +2,6 @@ import styled from "styled-components";
 
 // Main Dashboard Navigation Styles
 export const Navigation = styled.nav`
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
   background: linear-gradient(
     to right,
     var(--clr-primary-color),
@@ -19,8 +16,6 @@ export const Navigation = styled.nav`
 
 // Nav ul Styles
 export const NavWrapper = styled.ul`
-  display: flex;
-  justify-content: space-between;
   list-style-type: none;
   height: 100%;
   @media only screen and (min-width: 768px) {
@@ -43,6 +38,9 @@ export const NavWrapper = styled.ul`
 
   // Nav Link Styles
   a {
+    &.nav__link--active {
+      color: var(--clr-bg-light);
+    }
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -64,10 +62,6 @@ export const NavWrapper = styled.ul`
     }
     &:active {
       color: var(--clr-bg-dark);
-    }
-
-    &.nav__link--active {
-      color: var(--clr-bg-light);
     }
 
     @media only screen and (min-width: 768px) {
