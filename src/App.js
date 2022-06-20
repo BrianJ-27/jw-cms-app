@@ -34,6 +34,7 @@ const App = () => {
           />
         </React.Fragment>
       )}
+
       <Routes>
         <Route
           path="/"

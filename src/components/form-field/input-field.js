@@ -2,44 +2,32 @@ import React from "react";
 import styled, { css } from "styled-components";
 
 const StyledInput = styled.input`
-  border-radius: 5px;
-  height: 2em;
-  margin-top: 1.5em;
-  padding-left: 5px;
-  margin-left: 1rem;
-  width: inherit;
-  outline: none;
-  border: 2px solid var(--clr-bg-light);
+  border-radius: 10px;
+  border-width: 0.5px;
+  padding: 15px;
+  margin-top: 1rem;
+  width: 100%;
   background: transparent;
-  color: var(--clr-bg-light);
+  border-bottom: 2px solid var(--clr-primary-color);
+  color: var(--clr-bg-dark);
   font-family: inherit;
   &::placeholder {
-    font-weight: var(--fp-weight-main);
+    font-size: 1.5rem;
   }
-  &:focus-visible,
-  &:hover {
-    outline: 1px solid var(--clr-accent-color);
-    border-color: var(--clr-accent-color);
+
+  &:focus,
+  &:focus-visible {
+    outline: 1px dotted var(--clr-primary-color);
   }
 
   &.form__input:focus ~ label,
   &.form__input:not(:placeholder-shown).form__input:not(:focus) ~ label {
-    top: 1rem;
+    top: 0.75rem;
     font-size: 0.8em;
+    letter-spacing: 1px;
+    font-weight: bold;
+    color: var(--clr-primary-color);
   }
-
-  ${(props) =>
-    props.checkbox &&
-    css`
-      margin-left: unset;
-      margin-top: unset;
-      width: auto;
-      height: auto;
-      margin-right: 0.3em;
-      accent-color: var(--clr-accent-color);
-      @media only screen and (min-width: 768px) {
-      }
-    `};
 
   ${(props) =>
     props.error &&
@@ -52,11 +40,11 @@ const StyledLabel = styled.label`
   position: absolute;
   top: 0;
   left: 2.6rem;
-  color: var(--clr-bg-light);
+  color: var(--clr-bg-dark);
   top: 2rem;
-  cursor: text;
+  /* cursor: text; */
   transition: top 200ms ease-in, left 200ms ease-in;
-  background-color: var(--clr-primary-color);
+  background-color: var(--clr-bg-color);
 `;
 
 const InputField = ({ label, id, errors, ...otherProps }) => {
