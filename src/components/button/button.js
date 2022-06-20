@@ -16,8 +16,8 @@ const Button = styled.button`
   margin-top: 1.5rem;
   cursor: pointer;
   &:hover {
-    background: var(--clr-accent-color);
-    color: color-contrast(var(--clr-bg-light) vs white, black);
+    background: var(--clr-bg-dark);
+    color: var(--clr-primary-color);
   }
   &:focus,
   &:focus-visible {

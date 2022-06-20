@@ -41,9 +41,6 @@ const ImageQuote = styled.div`
   color: var(--clr-bg-light);
   z-index: 1;
   blockquote p {
-    color: var(--clr-bg-light);
-    line-height: 1.5;
-    letter-spacing: 1px;
   }
 `;
 
@@ -53,10 +50,12 @@ const LoginPage = ({ setShowLayout, setCurrentUser }) => {
       <ImageContainer>
         <ImageQuote>
           <blockquote>
-            <p>
-              ...Do the work of an Evangelizer, fully accomplish your ministry.
+            <p className="content__quote">
+              "...Do the work of an{" "}
+              <span className="content__highlight">Evangelizer</span>, fully
+              accomplish your ministry."
             </p>
-            <cite> - 2 Timothy 4:2</cite>
+            <cite className="content__author"> - 2 Timothy 4:2</cite>
           </blockquote>
         </ImageQuote>
         <HeroImage />
