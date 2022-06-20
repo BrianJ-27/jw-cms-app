@@ -1,0 +1,77 @@
+// **************************************
+// TYPOGRAPHY STYLES
+// **************************************
+@use "../utilities" as *;
+
+:is(.title__primary, .content__form, .content__logo) {
+  text-align: center;
+}
+
+//h2 styles
+.title__secondary {
+  @include text-prop($size: 1.5em, $f-weight: 500);
+  @extend %text-modules;
+  @include mq("md") {
+    @include text-prop($size: 1.3em, $l-height: 1.5);
+  }
+  @include mq("lg") {
+    @include text-prop($size: 1.6em);
+  }
+}
+
+//h3 Styles
+
+.title__tertiary {
+  @include text-prop($size: 1.4em);
+}
+
+/*----CONTEXT STYLES----*/
+
+//content styles
+.content {
+  padding: 0.5px;
+  &__header {
+    --fp-weight-main: 600;
+    color: var(--clr-bg-dark);
+    transform: translateY(80px);
+    @include text-prop(
+      $size: clamp(1rem, 3vw, 2rem),
+      $f-weight: var(--fp-weight-main)
+    );
+
+    @include mq("md") {
+      transform: unset;
+    }
+  }
+
+  &__profile {
+    color: var(--clr-bg-light);
+    @include mq("md") {
+      color: var(--clr-bg-dark);
+    }
+  }
+
+  &__form {
+    @include text-prop($size: clamp(0.7rem, 3vw, 1.2rem), $f-weight: 400);
+    margin-bottom: 0.5rem;
+    line-height: 1.5;
+    color: #fff;
+  }
+
+  &__logo {
+    color: var(--clr-bg-light);
+    text-align: center;
+    transform: translateY(-5px);
+
+    @include text-prop(
+      $size: clamp(0.7rem, 3vw, 1.8rem),
+      $f-weight: var(--fp-weight-main),
+      $color: var(--clr-bg-light)
+    );
+  }
+}
+
+// link styles
+.link__text {
+  @include text-prop($size: clamp(0.3rem, 2vw, 1.1rem), $f-weight: 500);
+}

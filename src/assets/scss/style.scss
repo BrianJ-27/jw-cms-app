@@ -1,0 +1,10 @@
+// **************************************
+// index.scss
+// Main Sass file used to import partials
+// **************************************
+
+//use base partials here:
+@use "base";
+
+// Use State Partials here:
+@use "state";

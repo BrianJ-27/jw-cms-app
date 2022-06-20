@@ -1,0 +1,43 @@
+// **************************************
+// BASE STYLES
+// **************************************
+
+@use "../utilities" as *;
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  font-family: var(--fp-font-main);
+  line-height: 1;
+  font-size: 1rem;
+  background-color: var(--clr-bg-light);
+}
+
+main {
+  background-color: var(--clr-bg-color);
+}
+
+p {
+  color: var(--clr-bg-dark);
+}
+
+abbr[title] {
+  text-decoration: none;
+}
+
+a {
+  display: inline-block;
+  padding: 0.6rem 0;
+  text-decoration: underline var(--clr-bg-light);
+  color: var(--clr-bg-light);
+}
