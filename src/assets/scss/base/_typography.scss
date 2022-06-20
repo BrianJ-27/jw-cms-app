@@ -16,8 +16,8 @@
   &--form {
     padding: 20px;
     background-color: var(--clr-bg-color);
-    transform: translateY(-25px);
-    border-radius: 30px;
+    transform: translateY(-20px);
+    border-radius: 15px;
     &::after {
       content: "";
       display: block;
@@ -64,6 +64,28 @@
     @include mq("md") {
       transform: unset;
     }
+  }
+
+  &__quote {
+    @include text-prop(
+      $size: clamp(1rem, 3.5vw, 1.5rem),
+      $l-height: 1.5,
+      $color: var(--clr-bg-light)
+    );
+    font-style: italic;
+    letter-spacing: 1px;
+  }
+
+  &__author {
+    display: block;
+    font-size: clamp(0.5rem, 3.5vw, 1rem);
+    margin-top: 1rem;
+  }
+
+  &__highlight {
+    --fp-weight-main: 800;
+    color: var(--clr-primary-color);
+    font-weight: var(--fp-weight-main);
   }
 
   &__profile {
