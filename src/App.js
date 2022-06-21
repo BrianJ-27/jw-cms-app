@@ -37,7 +37,6 @@ const App = () => {
 
       <Routes>
         <Route
-          exact
           path="/"
           element={
             <LoginPage

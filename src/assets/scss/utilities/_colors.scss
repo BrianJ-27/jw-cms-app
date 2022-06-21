@@ -11,7 +11,8 @@ Color Wheel:
 $colors: (
   // Primary Project Color
   primary: (
-    color: hsl(353, 100%, 36%)
+    color: hsl(353, 100%, 36%),
+    error: hsl(0, 100%, 50%)
   ),
   // Accent Project Color
   accent: (

@@ -1,5 +1,5 @@
 import React from "react";
-import FormLogin from "../layout/form-login/form";
+import Form from "../layout/form/form";
 import styled from "styled-components";
 import HeroImage from "../hero-image/heroImg";
 
@@ -69,10 +69,7 @@ const LoginPage = ({ setShowLayout, setCurrentUser }) => {
         <HeroImage />
       </ImageContainer>
       <FormContainer id="form">
-        <FormLogin
-          setShowLayout={setShowLayout}
-          setCurrentUser={setCurrentUser}
-        />
+        <Form setShowLayout={setShowLayout} setCurrentUser={setCurrentUser} />
       </FormContainer>
     </LoginScreenWrapper>
   );

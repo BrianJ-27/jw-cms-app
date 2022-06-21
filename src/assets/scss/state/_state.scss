@@ -3,5 +3,7 @@
 // **************************************
 
 .show__error-msg {
-  border: 2px solid red;
+  color: var(--clr-primary-error);
+  transform: translateY(-20px);
+  font-size: clamp(0.8rem, 3vw, 1rem);
 }

@@ -1,4 +1,4 @@
-export default function validateForm(formData) {
+function validateForm(formData) {
   let errors = {};
 
   if (!formData.email) {
@@ -12,3 +12,5 @@ export default function validateForm(formData) {
   console.log(errors);
   return errors;
 }
+
+export default validateForm;

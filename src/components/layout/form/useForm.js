@@ -2,13 +2,10 @@ import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
 const useForm = (validate, setShowLayout) => {
-  let history = useNavigate();
-
   // Set initial Form State values to empty strings
   const [formData, setFormData] = useState({
     email: "",
     password: "",
-    isChecked: true,
   });
 
   // Set empty object to use later in the validate function
@@ -19,16 +16,17 @@ const useForm = (validate, setShowLayout) => {
     setFormData({
       ...formData,
       [field]: target.value,
-      [field]: target.checked,
     });
   };
+
+  let history = useNavigate();
 
   // Handles the action when user clicks on the form button and resets the form
   const handleLogin = (e) => {
     e.preventDefault();
     setErrors(validate(formData));
-    setShowLayout(true);
     history("/dashboard");
+    setShowLayout(true);
   };
 
   return { handleUpdate, handleLogin, formData, errors };

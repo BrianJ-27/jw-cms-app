@@ -22,17 +22,17 @@ const StyledInput = styled.input`
 
   &.form__input:focus ~ label,
   &.form__input:not(:placeholder-shown).form__input:not(:focus) ~ label {
-    top: 0.75rem;
-    font-size: 0.8em;
-    letter-spacing: 1px;
-    font-weight: bold;
-    color: var(--clr-primary-color);
+    top: 0.75rem !important;
+    font-size: 0.8em !important;
+    letter-spacing: 1px !important;
+    font-weight: bold !important;
+    color: var(--clr-primary-color) !important;
   }
 
   ${(props) =>
     props.error &&
     css`
-      border: 2px solid red;
+      border: 2px solid var(--clr-primary-error);
     `};
 `;
 
@@ -47,11 +47,39 @@ const StyledLabel = styled.label`
   background-color: var(--clr-bg-color);
 `;
 
+const ErrorMessage = styled.div`
+  padding: 5px;
+  position: relative;
+  bottom: -20px;
+  font-size: 12px;
+  font-style: italic;
+  text-align: right;
+  color: var(--clr-primary-error);
+`;
+
+const ErrorIcon = styled.svg`
+  position: absolute;
+  top: -60px;
+  right: 10px;
+`;
+
 const InputField = ({ label, id, errors, ...otherProps }) => {
   return (
     <React.Fragment>
       <StyledInput {...otherProps} id={id} />
       {label ? <StyledLabel htmlFor={id}>{label}</StyledLabel> : null}
+      {errors && (
+        <ErrorMessage>
+          <p className="show__error-msg">{errors}</p>
+          <ErrorIcon width="24" height="24" xmlns="http://www.w3.org/2000/svg">
+            <g fill="none" fillRule="evenodd">
+              <circle fill="#FF7979" cx="12" cy="12" r="12" />
+              <rect fill="#FFF" x="11" y="6" width="2" height="9" rx="1" />
+              <rect fill="#FFF" x="11" y="17" width="2" height="2" rx="1" />
+            </g>
+          </ErrorIcon>
+        </ErrorMessage>
+      )}
     </React.Fragment>
   );
 };
