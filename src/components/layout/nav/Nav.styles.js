@@ -2,20 +2,14 @@ import styled from "styled-components";
 
 // Main Dashboard Navigation Styles
 export const Navigation = styled.nav`
-  height: 100%;
-  position: relative;
-  background: linear-gradient(
-    to right,
-    var(--clr-primary-color),
-    var(--clr-bg-dark)
-  );
+  background-color: var(--clr-bg-light);
   padding: 0 1rem 0 0.5rem;
 `;
 
 // Nav ul Styles
 export const NavWrapper = styled.ul`
   list-style-type: none;
-  height: 100%;
+  width: 100%;
   @media only screen and (min-width: 768px) {
     flex-direction: column;
     justify-content: unset;
@@ -46,17 +40,16 @@ export const NavWrapper = styled.ul`
     text-decoration: none;
     transition: color 0.5s;
     &:link {
-      color: var(--clr-bg-light);
+      color: var(--clr-bg-dark);
     }
     &:visited {
-      color: var(--clr-accent-color);
+      color: var(--clr-bg-dark);
     }
     &:focus {
-      color: var(--clr-bg-light);
+      color: var(--clr-bg-dark);
     }
     &:hover {
-      color: var(--clr-bg-light);
-      text-decoration: underline;
+      color: var(--clr-primary-color);
     }
     &:active {
       color: var(--clr-bg-dark);
@@ -84,13 +77,6 @@ export const NavLogoContainer = styled.div`
   display: none;
   @media only screen and (min-width: 768px) {
     display: flex;
-    /* align-items: center; */
-    background-color: black;
-    padding: 1rem;
-    position: absolute;
-    left: 0;
-    right: 0;
-    font-size: 7rem;
     svg {
       fill: var(--clr-accent-color);
       border-right: 2px solid var(--clr-accent-color);

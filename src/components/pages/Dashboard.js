@@ -1,10 +1,17 @@
 import React from "react";
+import DashboardStats from "../dashboard-stats/dashboardStats";
 import Cards from "../cards/Cards";
 
-const Dashboard = () => {
+const Dashboard = ({ congregation }) => {
   return (
     <main className="main">
-      <Cards />;
+      <DashboardStats />
+      <div className="main__grid--wrapper">
+        <Cards />
+        <div>
+          <h2 className="title__secondary">Announcements</h2>
+        </div>
+      </div>
     </main>
   );
 };

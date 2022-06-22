@@ -1,17 +1,12 @@
 import React from "react";
 import ProfileBlock from "../profile/index";
-import DashLogo from "../../logo/logo";
+// import DashLogo from "../../logo/logo";
 import styled from "styled-components";
+import { Settings } from "@styled-icons/fluentui-system-regular/Settings";
 
 const HeaderContainer = styled.header`
-  background-color: var(--clr-bg-dark);
-  position: relative;
-  padding: 0rem 1.5rem;
-  z-index: -2;
-  @media only screen and (min-width: 768px) {
-    background-color: var(--clr-bg-color);
-    padding-left: 1rem;
-  }
+  background-color: var(--clr-bg-color);
+  padding: 1.25rem 1rem 0rem;
 `;
 
 const ScreenReaderH1 = styled.h1`
@@ -28,27 +23,15 @@ const ScreenReaderH1 = styled.h1`
 `;
 
 const LogoContainer = styled.div`
-  position: absolute;
-  top: 20%;
   bottom: translateY(-20%);
   left: 1rem;
   text-align: center;
   display: flex;
   svg {
-    fill: var(--clr-accent-color);
+    fill: var(--clr-primary-color);
     font-size: 3.5rem;
-    border-right: 1px solid var(--clr-accent-color);
-    padding-right: 2px;
-  }
 
-  p {
-    font-size: 1rem;
-    writing-mode: vertical-rl;
-    text-orientation: upright;
-    padding-left: 4px;
-    font-family: Georgia, serif;
-    letter-spacing: 1px;
-    /* font-style: italic; */
+    padding-right: 2px;
   }
   @media only screen and (min-width: 768px) {
     position: unset;
@@ -56,29 +39,26 @@ const LogoContainer = styled.div`
   }
 `;
 
+const StyledSettings = styled(Settings)`
+  color: var(--clr-bg-dark);
+  width: clamp(45px, 6vw, 50px);
+  position: relative;
+  top: -20px;
+`;
+
 const Header = ({ userProfile }) => {
   return (
     <HeaderContainer className="header flex__container--between">
       <div>
-        <ScreenReaderH1>Cart Ministry Scheduler App</ScreenReaderH1>
-        <p className="content__header">Welcome Back! {userProfile.firstName}</p>
-      </div>
-
-      <div>
-        <ProfileBlock userProfile={userProfile} />
-        <p className="content__profile">
-          {userProfile.congregation} &#124;&nbsp;
-          <span>Congregation</span>
-        </p>
+        <div>
+          <ScreenReaderH1>Cart Ministry Scheduler App</ScreenReaderH1>
+        </div>
         <LogoContainer>
-          <DashLogo />
-
-          <p className="content__logo">
-            {" "}
-            <abbr title="Congregation Ministry Scheduler">CMS</abbr>
-          </p>
+          {/* <DashLogo />*/}
+          <ProfileBlock userProfile={userProfile} />
         </LogoContainer>
       </div>
+      <StyledSettings />
     </HeaderContainer>
   );
 };
