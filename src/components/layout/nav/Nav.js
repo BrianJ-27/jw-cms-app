@@ -1,11 +1,9 @@
 import React from "react";
-import {
-  MdOutlineHouse,
-  MdAddchart,
-  MdOutlinePersonSearch,
-  MdMap,
-} from "react-icons/md";
-import { BiDoorOpen } from "react-icons/bi";
+import { Dashboard } from "@styled-icons/boxicons-solid/Dashboard";
+import { PersonBoard } from "@styled-icons/fluentui-system-filled/PersonBoard";
+import { AddToList } from "@styled-icons/entypo/AddToList";
+import { Location } from "@styled-icons/entypo/Location";
+import { LogoutCircle } from "@styled-icons/remix-line/LogoutCircle";
 import { Link } from "react-router-dom";
 import { NavWrapper, Navigation, NavLogoContainer } from "./Nav.styles";
 import NavLogo from "../../logo/logo";
@@ -26,7 +24,7 @@ const DashNav = ({
 
   return (
     <Navigation className="nav">
-      <div className="flex__container--between">
+      <div style={{ height: "100%" }} className="flex__container--between">
         <NavLogoContainer>
           <NavLogo />
 
@@ -38,42 +36,42 @@ const DashNav = ({
         <NavWrapper className="flex__container--between">
           <li>
             <Link className="nav__link link__text" to="/dashboard">
-              <MdOutlineHouse className="nav__icon" />
+              <Dashboard className="nav__icon" />
               <span className="title"> Dashboard</span>
             </Link>
           </li>
 
           <li>
             <Link className="nav__link link__text" to="/publishers">
-              <MdOutlinePersonSearch className="nav__icon" />
+              <PersonBoard className="nav__icon" />
               <span className="title">Publishers</span>
             </Link>
           </li>
 
           <li>
             <Link className="nav__link--active link__text" to="/addshift">
-              <MdAddchart className="nav__icon" />
+              <AddToList className="nav__icon" />
               <span className="title">Add Shift</span>
             </Link>
           </li>
 
           <li>
             <Link className=" nav__link link__text" to="/cartlocation">
-              <MdMap className="nav__icon" />
+              <Location className="nav__icon" />
               <span className="title">Cart Locations</span>
             </Link>
           </li>
           {currentUser ? (
             <li>
               <Link to="/" className=" nav__link link__text">
-                <BiDoorOpen className="nav__icon" />
+                <LogoutCircle className="nav__icon" />
                 <span className="title">Log Out</span>
               </Link>
             </li>
           ) : (
             <li onClick={loggedOut}>
               <Link to="/" className=" nav__link link__text">
-                <BiDoorOpen className="nav__icon" />
+                <LogoutCircle className="nav__icon" />
                 <span className="title">Log Out</span>
               </Link>
             </li>

@@ -3,7 +3,7 @@
 // **************************************
 @use "../utilities" as *;
 
-:is(.title__primary, .content__logo) {
+:is(.title__primary, .content__logo, .content__header-dash, .content__stats) {
   text-align: center;
 }
 
@@ -31,39 +31,37 @@
 
 //h2 styles
 .title__secondary {
-  @include text-prop($size: 1.5em, $f-weight: 500);
+  --fp-weight-main: 600;
+  @include text-prop(
+    $size: clamp(1em, 3vw, 2rem),
+    $f-weight: var(--fp-weight-main),
+    $color: var(--clr-bg-dark)
+  );
   @extend %text-modules;
-  @include mq("md") {
-    @include text-prop($size: 1.3em, $l-height: 1.5);
-  }
-  @include mq("lg") {
-    @include text-prop($size: 1.6em);
-  }
-}
-
-//h3 Styles
-
-.title__tertiary {
-  @include text-prop($size: 1.4em);
+  margin-top: 1.5rem;
 }
 
 /*----CONTEXT STYLES----*/
 
 //content styles
 .content {
-  padding: 0.5px;
-  &__header {
+  &__header-dash {
     --fp-weight-main: 600;
-    color: var(--clr-bg-dark);
-    transform: translateY(80px);
     @include text-prop(
-      $size: clamp(1rem, 3vw, 2rem),
-      $f-weight: var(--fp-weight-main)
+      $size: clamp(0.8rem, 3vw, 2rem),
+      $f-weight: var(--fp-weight-main),
+      $l-height: 1.6,
+      $color: var(--clr-primary-color)
     );
+  }
 
-    @include mq("md") {
-      transform: unset;
-    }
+  &__stats {
+    @include text-prop(
+      $size: clamp(0.5rem, 2.73vw, 2rem),
+      $f-weight: var(--fp-weight-main),
+      $l-height: 1.6,
+      $color: var(--clr-bg-dark)
+    );
   }
 
   &__quote {
@@ -105,6 +103,10 @@
     margin-top: 2rem;
     line-height: 1.5;
   }
+  &__link {
+    color: var(--clr-bg-dark);
+    margin-top: 0.5rem;
+  }
 
   &__logo {
     color: var(--clr-bg-light);
@@ -116,9 +118,17 @@
       $color: var(--clr-bg-light)
     );
   }
-  &__link {
-    color: var(--clr-bg-dark);
-    margin-top: 0.5rem;
+  &__card-body {
+    @include text-prop(
+      $size: clamp(0.65rem, 3.5vw, 1.8rem),
+      $f-weight: var(--fp-weight-main)
+    );
+  }
+  &__card-heading {
+    @include text-prop(
+      $size: clamp(1.5rem, 3.5vw, 1.8rem),
+      $f-weight: var(--fp-weight-main)
+    );
   }
 }
 

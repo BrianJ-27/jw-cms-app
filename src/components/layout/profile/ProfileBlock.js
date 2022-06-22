@@ -4,22 +4,17 @@ import styled from "styled-components";
 
 const ProfileContainer = styled.div`
   display: flex;
-  align-items: center;
   padding-bottom: 5px;
 `;
 
-const ProfileName = styled.div`
-  color: var(--clr-accent-color);
-  font-size: clamp(0.8rem, 6vw, 1.1rem);
-  padding-bottom: 5px;
+const ProfileGreeting = styled.h1`
+  font-size: clamp(0.6rem, 4vw, 1.5rem);
 `;
 
-const ProfileRole = styled.div`
-  color: var(--clr-bg-light);
-  font-size: clamp(0.7rem, 6vw, 1rem);
-  @media (min-width: 768px) {
-    color: var(--clr-primary-color);
-  }
+const ProfileName = styled.p`
+  font-size: clamp(0.8rem, 6vw, 1.6rem);
+  text-align: left;
+  /* color: var(--clr-primary-color); */
 `;
 
 const ProfileCaption = styled.div`
@@ -27,17 +22,15 @@ const ProfileCaption = styled.div`
 `;
 
 export default function ProfileBlock({ userProfile }) {
-  const fullName = `${userProfile.firstName} ${userProfile.lastName}`;
+  const firstName = `${userProfile.firstName}`;
 
   return (
-    <>
-      <ProfileContainer>
-        <ProfilePicture profilePicture={userProfile.profilePicture} />
-        <ProfileCaption>
-          <ProfileName data-testid="name">{fullName}</ProfileName>
-          <ProfileRole data-testid="role">{userProfile.role}</ProfileRole>
-        </ProfileCaption>
-      </ProfileContainer>
-    </>
+    <ProfileContainer>
+      <ProfilePicture profilePicture={userProfile.profilePicture} />
+      <ProfileCaption>
+        <ProfileGreeting>Welcome Back!</ProfileGreeting>
+        <ProfileName data-testid="name">{firstName}</ProfileName>
+      </ProfileCaption>
+    </ProfileContainer>
   );
 }
