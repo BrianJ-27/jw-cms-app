@@ -1,7 +1,7 @@
 import React from "react";
 import ProfileBlock from "../profile/index";
-// import DashLogo from "../../logo/logo";
 import styled from "styled-components";
+import StyledButton from "../../button/button";
 import { Settings } from "@styled-icons/fluentui-system-regular/Settings";
 
 const HeaderContainer = styled.header`
@@ -33,32 +33,27 @@ const LogoContainer = styled.div`
 
     padding-right: 2px;
   }
-  @media only screen and (min-width: 768px) {
-    position: unset;
-    display: none;
-  }
 `;
 
 const StyledSettings = styled(Settings)`
   color: var(--clr-bg-dark);
   width: clamp(45px, 6vw, 50px);
-  position: relative;
-  top: -20px;
 `;
 
 const Header = ({ userProfile }) => {
   return (
-    <HeaderContainer className="header flex__container--between">
+    <HeaderContainer className="header flex__container--between-center">
       <div>
         <div>
           <ScreenReaderH1>Cart Ministry Scheduler App</ScreenReaderH1>
         </div>
         <LogoContainer>
-          {/* <DashLogo />*/}
           <ProfileBlock userProfile={userProfile} />
         </LogoContainer>
       </div>
-      <StyledSettings />
+      <StyledButton svg_interactive>
+        <StyledSettings aria-hidden tabIndex="0" />
+      </StyledButton>
     </HeaderContainer>
   );
 };

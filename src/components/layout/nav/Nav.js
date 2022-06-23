@@ -25,52 +25,71 @@ const DashNav = ({
   return (
     <Navigation className="nav">
       <div style={{ height: "100%" }} className="flex__container--between">
-        <NavLogoContainer>
+        <NavLogoContainer className="flex__container--column-between">
           <NavLogo />
 
-          <p className="content__logo">
+          {/** <p className="content__logo">
             {" "}
             <abbr title="Congregation Ministry Scheduler">CMS </abbr>
-          </p>
+          </p> */}
         </NavLogoContainer>
+
         <NavWrapper className="flex__container--between">
-          <li>
-            <Link className="nav__link link__text" to="/dashboard">
+          <li className="flex__container--v-center">
+            <Link
+              className="nav__link flex__container--column-v-center"
+              to="/dashboard"
+            >
               <Dashboard className="nav__icon" />
               <span className="title"> Dashboard</span>
             </Link>
           </li>
 
-          <li>
-            <Link className="nav__link link__text" to="/publishers">
+          <li className="flex__container--v-center">
+            <Link
+              className="nav__link flex__container--column-v-center"
+              to="/publishers"
+            >
               <PersonBoard className="nav__icon" />
               <span className="title">Publishers</span>
             </Link>
           </li>
 
-          <li>
-            <Link className="nav__link--active link__text" to="/addshift">
+          <li className="flex__container--v-center">
+            <Link
+              className="nav__link--active flex__container--column-v-center"
+              to="/addshift"
+            >
               <AddToList className="nav__icon" />
               <span className="title">Add Shift</span>
             </Link>
           </li>
 
-          <li>
-            <Link className=" nav__link link__text" to="/cartlocation">
+          <li className="flex__container--v-center">
+            <Link
+              className="nav__link flex__container--column-v-center"
+              to="/cartlocation"
+            >
               <Location className="nav__icon" />
               <span className="title">Cart Locations</span>
             </Link>
           </li>
           {currentUser ? (
-            <li>
-              <Link to="/" className=" nav__link link__text">
+            <li className="flex__container--v-center">
+              <Link
+                to="/"
+                className="nav__link flex__container--column-v-center"
+              >
                 <LogoutCircle className="nav__icon" />
                 <span className="title">Log Out</span>
               </Link>
             </li>
           ) : (
-            <li onClick={loggedOut}>
-              <Link to="/" className=" nav__link link__text">
+            <li className="flex__container--v-center" onClick={loggedOut}>
+              <Link
+                to="/"
+                className="nav__link flex__container--column-v-center"
+              >
                 <LogoutCircle className="nav__icon" />
                 <span className="title">Log Out</span>
               </Link>

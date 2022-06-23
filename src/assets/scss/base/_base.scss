@@ -21,6 +21,9 @@ body {
   line-height: 1;
   font-size: 1rem;
   background-color: var(--clr-bg-color);
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  background-size: 100%;
 }
 
 main {

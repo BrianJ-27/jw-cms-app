@@ -2,17 +2,21 @@
 // LAYOUT STYLES
 // **************************************
 @use "../utilities" as *;
+
 /*------FLEXBOX LAYOUT STYLES-----------*/
 
 //flex styles
 .flex__container {
-  width: 100%;
+  flex-basis: 100%;
   @include flex_me();
   &--column {
     @include flex_me($dir: column);
   }
   &--column-center {
     @include flex_me($dir: column, $just: center);
+  }
+  &--column-v-center {
+    @include flex_me($dir: column, $vertAlign: center);
   }
   &--column-between {
     @include flex_me($dir: column, $just: space-between);
@@ -23,6 +27,9 @@
   &--between {
     @include flex_me($just: space-between);
   }
+  &--between-center {
+    @include flex_me($just: space-between, $vertAlign: center);
+  }
 
   &--around {
     @include flex_me($just: space-around);
@@ -32,6 +39,12 @@
   }
   &--v-end {
     @include flex_me($vertAlign: flex-end);
+  }
+  &--v-center {
+    @include flex_me($vertAlign: center);
+  }
+  &--centered-fully {
+    @include flex_me($vertAlign: center, $just: center);
   }
 }
 
@@ -50,7 +63,7 @@
     "navigation";
 
   @include mq("md") {
-    grid-template-columns: 200px 3fr 3fr;
+    grid-template-columns: 80px 3fr 3fr;
     grid-template-areas:
       "navigation header header"
       "navigation main main"
@@ -63,8 +76,11 @@
   display: grid;
   grid-gap: 1.5rem;
   padding: 2rem 1rem;
+  max-width: 50rem;
+  margin-inline: auto;
+  grid-template-columns: 1fr;
   @include mq("md") {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 2fr 1fr;
     padding: 1rem;
   }
 }

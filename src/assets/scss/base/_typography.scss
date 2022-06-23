@@ -7,6 +7,7 @@
   text-align: center;
 }
 
+//h1 styles
 .title__primary {
   --fp-weight-main: 400;
   @include text-prop(
@@ -14,6 +15,7 @@
     $f-weight: var(--fp-weight-main)
   );
   &--form {
+    @extend .title__primary;
     padding: 20px;
     background-color: var(--clr-bg-color);
     transform: translateY(-20px);
@@ -33,106 +35,30 @@
 .title__secondary {
   --fp-weight-main: 600;
   @include text-prop(
-    $size: clamp(1em, 3vw, 2rem),
+    $size: clamp(1.2em, 3vw, 2rem),
     $f-weight: var(--fp-weight-main),
     $color: var(--clr-bg-dark)
   );
-  @extend %text-modules;
-  margin-top: 1.5rem;
+
+  margin: 1.5rem 0rem;
 }
 
-/*----CONTEXT STYLES----*/
+/*----CONTENT STYLES----*/
 
 //content styles
 .content {
-  &__header-dash {
+  @include text-prop(
+    $size: clamp(0.6rem, 3vw, 1rem),
+    $f-weight: var(--fp-weight-main)
+  );
+
+  &--bold {
     --fp-weight-main: 600;
     @include text-prop(
-      $size: clamp(0.8rem, 3vw, 2rem),
+      $size: clamp(0.67rem, 3vw, 1.2rem),
       $f-weight: var(--fp-weight-main),
       $l-height: 1.6,
       $color: var(--clr-primary-color)
     );
   }
-
-  &__stats {
-    @include text-prop(
-      $size: clamp(0.5rem, 2.73vw, 2rem),
-      $f-weight: var(--fp-weight-main),
-      $l-height: 1.6,
-      $color: var(--clr-bg-dark)
-    );
-  }
-
-  &__quote {
-    @include text-prop(
-      $size: clamp(1rem, 3.5vw, 1.5rem),
-      $l-height: 1.5,
-      $color: var(--clr-bg-light)
-    );
-    font-style: italic;
-    letter-spacing: 1px;
-  }
-
-  &__author {
-    display: block;
-    font-size: clamp(0.5rem, 3.5vw, 1rem);
-    margin-top: 1rem;
-  }
-
-  &__highlight {
-    --fp-weight-main: 800;
-    color: var(--clr-primary-color);
-    font-weight: var(--fp-weight-main);
-  }
-
-  &__profile {
-    color: var(--clr-bg-light);
-    @include mq("md") {
-      color: var(--clr-bg-dark);
-    }
-  }
-
-  &__form {
-    --fp-weight-main: 600;
-    @include text-prop(
-      $size: clamp(1.3rem, 3vw, 1.2rem),
-      $f-weight: var(--fp-weight-main),
-      $color: var(--clr-bg-dark)
-    );
-    margin-top: 2rem;
-    line-height: 1.5;
-  }
-  &__link {
-    color: var(--clr-bg-dark);
-    margin-top: 0.5rem;
-  }
-
-  &__logo {
-    color: var(--clr-bg-light);
-    text-align: center;
-    transform: translateY(-5px);
-    @include text-prop(
-      $size: clamp(0.7rem, 3vw, 1.8rem),
-      $f-weight: var(--fp-weight-main),
-      $color: var(--clr-bg-light)
-    );
-  }
-  &__card-body {
-    @include text-prop(
-      $size: clamp(0.65rem, 3.5vw, 1.8rem),
-      $f-weight: var(--fp-weight-main)
-    );
-  }
-  &__card-heading {
-    @include text-prop(
-      $size: clamp(1.5rem, 3.5vw, 1.8rem),
-      $f-weight: var(--fp-weight-main)
-    );
-  }
-}
-
-// link styles
-.link__text {
-  @include text-prop($size: clamp(0.3rem, 2vw, 1.1rem), $f-weight: 500);
 }
