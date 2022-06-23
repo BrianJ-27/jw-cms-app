@@ -1,8 +1,9 @@
 import React from "react";
 import styled from "styled-components";
 import StyledButton from "../button/button";
+import DummyCardImage from "../../assets/images/hero-image-2.jpeg";
 import { Add } from "@styled-icons/fluentui-system-filled/Add";
-import { Edit } from "@styled-icons/feather/Edit";
+import { EditAlt } from "@styled-icons/boxicons-regular/EditAlt";
 
 const CardWrapper = styled.div`
   border-radius: 10px;
@@ -47,7 +48,7 @@ const AddShift = styled(Add)`
  fill: var(--clr-bg-dark);
 `;
 
-const EditShift = styled(Edit)`
+const EditShift = styled(EditAlt)`
 width 25px;
 margin-right: 1rem;
 fill: var(--clr-bg-dark);
@@ -68,11 +69,7 @@ const Cards = () => {
           </StyledButton>
         </CardIconContainer>
         <CardImage>
-          <img
-            src={require("../../assets/images/hero-image-2.jpeg")}
-            alt=""
-            loading="lazy"
-          />
+          <img src={DummyCardImage} alt="" loading="lazy" />
         </CardImage>
         <CardContainer>
           <p className="content--bold">Library District</p>

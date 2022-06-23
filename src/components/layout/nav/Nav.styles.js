@@ -45,7 +45,7 @@ export const NavWrapper = styled.ul`
       display: block;
       background-color: var(--clr-bg-light);
       padding: 30px;
-      transform: translateY(-35px);
+      transform: translateY(-25px);
       position: absolute;
       z-index: -1;
       left: 0;
@@ -74,7 +74,7 @@ export const NavWrapper = styled.ul`
     text-decoration: none;
 
     &.nav__link--active {
-      transform: translateY(-35px);
+      transform: translateY(-25px);
       @media only screen and (min-width: 768px) {
         transform: translateY(0px);
       }
