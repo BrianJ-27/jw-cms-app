@@ -4,7 +4,7 @@ import StyledButton from "../button/button";
 import { Add } from "@styled-icons/fluentui-system-filled/Add";
 import { Edit } from "@styled-icons/feather/Edit";
 
-const CardWrapper = styled.section`
+const CardWrapper = styled.div`
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
 `;
@@ -28,52 +28,68 @@ const CardContainer = styled.div`
   line-height: 1.6;
   padding: 10px;
   border-radius: 0px 0px 10px 10px;
+  p {
+    color: var(--clr-bg-dark);
+  }
 `;
 
 const CardBody = styled.ul`
   padding-top: 0.5rem;
 `;
 
+const CardIconContainer = styled.div`
+  padding-bottom: 0.5rem;
+`;
+
 const AddShift = styled(Add)`
- width 20px;
+ width 25px;
  margin-right: .5rem;
+ fill: var(--clr-bg-dark);
 `;
 
 const EditShift = styled(Edit)`
-width 20px;
+width 25px;
 margin-right: 1rem;
+fill: var(--clr-bg-dark);
+&:hover{
+  background: none;
+}
 `;
 const Cards = () => {
   return (
-    <>
-      <div className="flex__container--between">
-        <h2 className="title__secondary">Upcoming Shifts </h2>
-        <div className="flex__container--v-end">
-          <AddShift />
-          <EditShift />
-        </div>
-      </div>
-
+    <React.Fragment>
       <CardWrapper>
+        <CardIconContainer className="flex__container--h-end">
+          <StyledButton svg_interactive>
+            <AddShift aria-hidden />
+          </StyledButton>
+          <StyledButton svg_interactive>
+            <EditShift aria-hidden />
+          </StyledButton>
+        </CardIconContainer>
         <CardImage>
-          <img src={require("../../assets/images/hero-image-2.jpeg")} alt="" />
+          <img
+            src={require("../../assets/images/hero-image-2.jpeg")}
+            alt=""
+            loading="lazy"
+          />
         </CardImage>
         <CardContainer>
-          <p class="content__card-heading">Library District</p>
+          <p className="content--bold">Library District</p>
           <div className="flex__container--between">
             <CardBody>
-              <li className="content__card-body">Shift Period</li>
-              <li className="content__card-body">8am - 11am</li>
+              <li className="content--bold">Shift Period</li>
+              <li className="content">8am - 11am</li>
             </CardBody>
             <CardBody>
-              <li className="content__card-body">Shift Hrs</li>
-              <li className="content__card-body">3hrs</li>
+              <li className="content--bold">Shift Hrs</li>
+              <li className="content">3hrs</li>
             </CardBody>
             <StyledButton full_details>Full Details</StyledButton>
           </div>
         </CardContainer>
       </CardWrapper>
-    </>
+    </React.Fragment>
   );
 };
 

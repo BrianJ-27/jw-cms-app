@@ -15,8 +15,8 @@ const FormContainer = styled.div`
 const Form = ({ setShowLayout, setCurrentUser }) => {
   return (
     <FormContainer className="flex__container--column-center">
-      <header className="title__primary--form">
-        <h1 className="title__primary">Publisher Portal</h1>
+      <header>
+        <h1 className="title__primary--form">Publisher Portal</h1>
       </header>
 
       <CustomForm setShowLayout={setShowLayout} />

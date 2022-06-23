@@ -9,6 +9,20 @@ const FormGroup = styled.div`
   position: relative;
 `;
 
+const FormLegend = styled.legend`
+  --fp-weight-main: 600;
+  font-size: clamp(1.3rem, 3vw, 1.2rem);
+  font-weight: var(--fp-weight-main)
+  margin-top: 2rem;
+  line-height: 1.5;
+  color: var(--clr-bg-dark);
+`;
+
+const FormLink = styled.a`
+  color: var(--clr-bg-dark);
+  margin-top: 0.5rem;
+`;
+
 const FormLogin = ({ setShowLayout, submitForm }) => {
   const { handleUpdate, handleLogin, formData, errors } = useForm(
     validateForm,
@@ -18,7 +32,7 @@ const FormLogin = ({ setShowLayout, submitForm }) => {
   return (
     <form action="index.html" method="get" onSubmit={handleLogin}>
       <fieldset style={{ padding: "0rem" }}>
-        <legend className="content__form">Log in</legend>
+        <FormLegend>Log in</FormLegend>
         <div className="flex__container--column">
           <FormGroup>
             <FormField
@@ -52,9 +66,7 @@ const FormLogin = ({ setShowLayout, submitForm }) => {
           <StyledButton>Sign In</StyledButton>
           <div>
             <p>
-              <a href="#a" className="content__link">
-                Forgot Password&#63;
-              </a>
+              <FormLink href="#a">Forgot Password&#63;</FormLink>
             </p>
           </div>
         </div>

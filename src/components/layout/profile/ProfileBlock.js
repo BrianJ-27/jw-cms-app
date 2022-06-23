@@ -7,13 +7,19 @@ const ProfileContainer = styled.div`
   padding-bottom: 5px;
 `;
 
-const ProfileGreeting = styled.h1`
-  font-size: clamp(0.6rem, 4vw, 1.5rem);
+const ProfileGreeting = styled.p`
+  --fp-weight-main: 700;
+  font-size: clamp(0.8rem, 4vw, 1.5rem);
+  color: var(--clr-primary-color);
+  font-weight: var(--fp-weight-main);
 `;
 
 const ProfileName = styled.p`
-  font-size: clamp(0.8rem, 6vw, 1.6rem);
+  --fp-weight-main: 800;
+  font-size: clamp(0rem, 6vw, 1.6rem);
   text-align: left;
+  font-weight: var(--fp-weight-main);
+  line-height: 1.4;
   /* color: var(--clr-primary-color); */
 `;
 
