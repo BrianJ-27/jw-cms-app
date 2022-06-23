@@ -1,154 +1,105 @@
-import styled from "styled-components";
+import React from "react";
+import { Dashboard } from "@styled-icons/boxicons-solid/Dashboard";
+import { PersonBoard } from "@styled-icons/fluentui-system-filled/PersonBoard";
+import { AddToList } from "@styled-icons/entypo/AddToList";
+import { Location } from "@styled-icons/entypo/Location";
+import { LogoutCircle } from "@styled-icons/remix-line/LogoutCircle";
+import { Link } from "react-router-dom";
+import { NavWrapper, Navigation, NavLogoContainer } from "./Nav.styles";
+import NavLogo from "../../logo/logo";
 
-// Main Dashboard Navigation Styles
-export const Navigation = styled.nav`
-  background-color: var(--clr-bg-light);
-  border-radius: 15px 15px 0px 0px;
-  box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
-    rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
-  div {
-  }
-  @media only screen and (min-width: 768px) {
-    border-radius: 0px 15px 15px 0px;
+const DashNav = ({
+  currentUser,
+  showLayout,
+  setShowLayout,
+  setCurrentUser,
+}) => {
+  const loggedOut = () => {
+    /*This one piece of code is toggling 
+      the nav and header components out of the DOM
+    */
+    setShowLayout(!showLayout);
+    setCurrentUser(false);
+  };
 
-    div {
-      justify-content: unset;
-      height: unset;
-      flex-direction: column;
-    }
-  }
-`;
+  return (
+    <Navigation className="nav">
+      <div style={{ height: "100%" }} className="flex__container--between">
+        <NavLogoContainer className="flex__container--column-between">
+          <NavLogo />
 
-// Nav ul Styles
-export const NavWrapper = styled.ul`
-  position: relative;
-  list-style-type: none;
-  width: 100%;
-  @media only screen and (min-width: 768px) {
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
-    height: 100%;
-    padding: 5rem 0rem 0rem;
-  }
+          {/** <p className="content__logo">
+            {" "}
+            <abbr title="Congregation Ministry Scheduler">CMS </abbr>
+          </p> */}
+        </NavLogoContainer>
 
-  li {
-    position: relative;
-    z-index: 1;
-    padding: 0px 9px;
-    @media only screen and (min-width: 768px) {
-      width: 100%;
-      padding: unset;
-    }
-    &:nth-of-type(3)::before {
-      content: "";
-      display: block;
-      background-color: var(--clr-bg-light);
-      padding: 30px;
-      transform: translateY(-25px);
-      position: absolute;
-      z-index: -1;
-      left: 0;
-      right: 0;
-      margin-left: auto;
-      margin-right: auto;
-      border-radius: 10px;
-      box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-      @media only screen and (min-width: 768px) {
-        display: none;
-      }
+        <NavWrapper className="flex__container--between">
+          <li className="flex__container--v-center">
+            <Link
+              className="nav__link flex__container--column-v-center"
+              to="/dashboard"
+            >
+              <Dashboard className="nav__icon" />
+              <span className="title"> Dashboard</span>
+            </Link>
+          </li>
 
-      &:nth-of-type(5) {
-        @media only screen and (min-width: 768px) {
-          margin-top: auto;
-        }
-      }
-    }
-  }
+          <li className="flex__container--v-center">
+            <Link
+              className="nav__link flex__container--column-v-center"
+              to="/publishers"
+            >
+              <PersonBoard className="nav__icon" />
+              <span className="title">Publishers</span>
+            </Link>
+          </li>
 
-  // Nav Link Styles
-  a {
-    --fp-weight-main: 500;
-    font-size: clamp(0.55rem, 2vw, 1.1rem);
-    font-weight: var(--fp-weight-main);
-    text-decoration: none;
+          <li className="flex__container--v-center">
+            <Link
+              className="nav__link--active flex__container--column-v-center"
+              to="/addshift"
+            >
+              <AddToList className="nav__icon" />
+              <span className="title">Add Shift</span>
+            </Link>
+          </li>
 
-    &.nav__link--active {
-      transform: translateY(-25px);
-      @media only screen and (min-width: 768px) {
-        transform: translateY(0px);
-      }
-    }
-    &:link {
-      color: var(--clr-bg-dark);
-    }
-    &:visited {
-      color: var(--clr-bg-dark);
-    }
-    &:focus {
-      color: var(--clr-bg-dark);
-    }
-    &:hover {
-      color: var(--clr-primary-color);
-      @media only screen and (min-width: 768px) {
-        border-left: 4px solid var(--clr-primary-color);
-      }
-    }
-    &:active,
-    span:active {
-      color: var(--clr-primary-color) !important;
-      @media only screen and (min-width: 768px) {
-        border-left: 4px solid var(--clr-primary-color);
-      }
-    }
+          <li className="flex__container--v-center">
+            <Link
+              className="nav__link flex__container--column-v-center"
+              to="/cartlocation"
+            >
+              <Location className="nav__icon" />
+              <span className="title">Cart Locations</span>
+            </Link>
+          </li>
+          {currentUser ? (
+            <li className="flex__container--v-center">
+              <Link
+                to="/"
+                className="nav__link flex__container--column-v-center"
+              >
+                <LogoutCircle className="nav__icon" />
+                <span className="title">Log Out</span>
+              </Link>
+            </li>
+          ) : (
+            <li className="flex__container--v-center" onClick={loggedOut}>
+              <Link
+                to="/"
+                className="nav__link flex__container--column-v-center"
+              >
+                <LogoutCircle className="nav__icon" />
+                <span className="title">Log Out</span>
+              </Link>
+            </li>
+          )}
+          {console.log(currentUser)}
+        </NavWrapper>
+      </div>
+    </Navigation>
+  );
+};
 
-    @media only screen and (min-width: 768px) {
-      flex-direction: row;
-    }
-    // Navigation Icon Styles
-    svg {
-      width: 25px;
-      height: 25px;
-      padding-bottom: 5px;
-      @media only screen and (min-width: 768px) {
-        width: 30px;
-        height: 30px;
-        padding-bottom: 0px;
-        transform: translateX(20px);
-      }
-    }
-    // Navigation Icon Text Styles
-    span {
-      --fp-weight-main: 700;
-      font-weight: var(--fp-weight-main);
-      @media only screen and (min-width: 768px) {
-        display: none;
-      }
-    }
-  }
-`;
-
-export const NavLogoContainer = styled.div`
-  display: none;
-  @media only screen and (min-width: 768px) {
-    display: flex;
-    height: 100%;
-    justify-content: center;
-    align-items: center;
-    padding-top: 1.8rem;
-
-    svg {
-      fill: var(--clr-bg-dark);
-      width: 40px;
-      font-size: 2.5rem;
-    }
-    p {
-      writing-mode: vertical-rl;
-      text-orientation: upright;
-      padding-left: 4px;
-      font-family: Georgia, serif;
-      letter-spacing: 1px;
-      font-size: 2rem;
-    }
-  }
-`;
+export default DashNav;

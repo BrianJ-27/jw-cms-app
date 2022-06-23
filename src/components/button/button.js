@@ -56,6 +56,15 @@ const Button = styled.button`
         color: unset;
       }
     `};
+  ${(props) =>
+    props.full_details &&
+    css`
+      --fp-weight-main: 400;
+     font-size: clamp(0.8rem, 6vw, 1.3rem)
+     font-weight: var(--fp-weight-main);
+     margin-top: unset;
+     padding: 15px ;
+    `};
 `;
 
 const CustomButton = ({ children, ...otherProps }) => {
