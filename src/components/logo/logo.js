@@ -1,12 +1,7 @@
 import React from "react";
-import { GiStoneTower } from "react-icons/gi";
 
 const dashboardLogo = () => {
-  return (
-    <div>
-      <GiStoneTower />
-    </div>
-  );
+  return <div>CMS</div>;
 };
 
 export default dashboardLogo;
