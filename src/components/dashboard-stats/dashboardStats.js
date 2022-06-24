@@ -27,7 +27,7 @@ const dashboardStats = () => {
   return (
     <React.Fragment>
       <StatsContainer>
-        <StatsWrapper className="flex__container--around">
+        <StatsWrapper className="flex__container--around ctr__txt">
           <DashBoardStats>
             <p className="content--bold">Congregation</p>
             <p className="content">East Tampa</p>

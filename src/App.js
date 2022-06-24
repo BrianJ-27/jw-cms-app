@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import Header from "./components/layout/header/Header";
-import DashboardNav from "./components/layout/nav/Nav";
+import DashboardNav from "./components/layout/nav/main-nav/MainNav";
 import LoginPage from "./components/pages/LoginPage";
 import Dashboard from "./components/pages/Dashboard";
 import AddShift from "./components/pages/AddShift";

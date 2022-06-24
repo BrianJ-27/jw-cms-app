@@ -8,7 +8,7 @@ const StyledImage = styled.img`
 `;
 
 const HeroImg = () => {
-  return <StyledImage src={HeroImage} alt="" />;
+  return <StyledImage src={HeroImage} alt="" loading="eager" />;
 };
 
 export default HeroImg;

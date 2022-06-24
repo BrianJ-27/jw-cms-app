@@ -3,7 +3,7 @@
 // **************************************
 @use "../utilities" as *;
 
-:is(.title__primary, .content__logo, .content__header-dash, .content__stats) {
+:is(.title__primary, .content__logo, .content__header-dash, .content__stats, .ctr__txt) {
   text-align: center;
 }
 

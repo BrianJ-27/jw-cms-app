@@ -1,105 +1,94 @@
-import React from "react";
-import { Dashboard } from "@styled-icons/boxicons-solid/Dashboard";
-import { PersonBoard } from "@styled-icons/fluentui-system-filled/PersonBoard";
-import { AddToList } from "@styled-icons/entypo/AddToList";
-import { Location } from "@styled-icons/entypo/Location";
-import { LogoutCircle } from "@styled-icons/remix-line/LogoutCircle";
-import { Link } from "react-router-dom";
-import { NavWrapper, Navigation, NavLogoContainer } from "./Nav.styles";
-import NavLogo from "../../logo/logo";
+import styled from "styled-components";
 
-const DashNav = ({
-  currentUser,
-  showLayout,
-  setShowLayout,
-  setCurrentUser,
-}) => {
-  const loggedOut = () => {
-    /*This one piece of code is toggling 
-      the nav and header components out of the DOM
-    */
-    setShowLayout(!showLayout);
-    setCurrentUser(false);
-  };
+// Main Dashboard Navigation Styles
+export const Navigation = styled.nav`
+  background-color: var(--clr-bg-light);
+  padding: 0 1rem 0 0.5rem;
+`;
+// Nav ul Styles
+export const NavWrapper = styled.ul`
+  list-style-type: none;
+  width: 100%;
+  @media only screen and (min-width: 768px) {
+    flex-direction: column;
+    justify-content: unset;
+    padding-top: 15rem;
+  }
 
-  return (
-    <Navigation className="nav">
-      <div style={{ height: "100%" }} className="flex__container--between">
-        <NavLogoContainer className="flex__container--column-between">
-          <NavLogo />
+  // Nav List Item Styles
+  li {
+    display: flex;
+    align-items: center;
+    @media only screen and (min-width: 768px) {
+      &:nth-of-type(5) {
+        border-top: 1px solid var(--clr-accent-color);
+        margin-top: auto;
+      }
+    }
+  }
 
-          {/** <p className="content__logo">
-            {" "}
-            <abbr title="Congregation Ministry Scheduler">CMS </abbr>
-          </p> */}
-        </NavLogoContainer>
+  // Nav Link Styles
+  a {
+    &.nav__link--active {
+      color: var(--clr-bg-light);
+    }
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-transform: uppercase;
+    text-decoration: none;
+    transition: color 0.5s;
+    font-size: 0.5rem;
+    &:link {
+      color: var(--clr-bg-dark);
+    }
+    &:visited {
+      color: var(--clr-bg-dark);
+    }
+    &:focus {
+      color: var(--clr-bg-dark);
+    }
+    &:hover {
+      color: var(--clr-primary-color);
+    }
+    &:active {
+      color: var(--clr-bg-dark);
+    }
 
-        <NavWrapper className="flex__container--between">
-          <li className="flex__container--v-center">
-            <Link
-              className="nav__link flex__container--column-v-center"
-              to="/dashboard"
-            >
-              <Dashboard className="nav__icon" />
-              <span className="title"> Dashboard</span>
-            </Link>
-          </li>
+    @media only screen and (min-width: 768px) {
+      flex-direction: row;
+    }
+    // Navigation Icon Styles
+    svg {
+      width: 25px;
+      height: 25px;
+      padding-bottom: 5px;
+      @media only screen and (min-width: 768px) {
+        width: 30px;
+        height: 30px;
+        padding-right: 5px;
+        padding-bottom: 0px;
+      }
+    }
+  }
+`;
 
-          <li className="flex__container--v-center">
-            <Link
-              className="nav__link flex__container--column-v-center"
-              to="/publishers"
-            >
-              <PersonBoard className="nav__icon" />
-              <span className="title">Publishers</span>
-            </Link>
-          </li>
-
-          <li className="flex__container--v-center">
-            <Link
-              className="nav__link--active flex__container--column-v-center"
-              to="/addshift"
-            >
-              <AddToList className="nav__icon" />
-              <span className="title">Add Shift</span>
-            </Link>
-          </li>
-
-          <li className="flex__container--v-center">
-            <Link
-              className="nav__link flex__container--column-v-center"
-              to="/cartlocation"
-            >
-              <Location className="nav__icon" />
-              <span className="title">Cart Locations</span>
-            </Link>
-          </li>
-          {currentUser ? (
-            <li className="flex__container--v-center">
-              <Link
-                to="/"
-                className="nav__link flex__container--column-v-center"
-              >
-                <LogoutCircle className="nav__icon" />
-                <span className="title">Log Out</span>
-              </Link>
-            </li>
-          ) : (
-            <li className="flex__container--v-center" onClick={loggedOut}>
-              <Link
-                to="/"
-                className="nav__link flex__container--column-v-center"
-              >
-                <LogoutCircle className="nav__icon" />
-                <span className="title">Log Out</span>
-              </Link>
-            </li>
-          )}
-          {console.log(currentUser)}
-        </NavWrapper>
-      </div>
-    </Navigation>
-  );
-};
-
-export default DashNav;
+// Nav Logo Container
+export const NavLogoContainer = styled.div`
+  display: none;
+  @media only screen and (min-width: 768px) {
+    display: flex;
+    svg {
+      fill: var(--clr-accent-color);
+      border-right: 2px solid var(--clr-accent-color);
+    }
+    p {
+      writing-mode: vertical-rl;
+      text-orientation: upright;
+      padding-left: 4px;
+      font-family: Georgia, serif;
+      letter-spacing: 1px;
+      font-size: 2rem;
+    }
+  }
+`;

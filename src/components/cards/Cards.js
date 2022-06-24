@@ -69,7 +69,7 @@ const Cards = () => {
           </StyledButton>
         </CardIconContainer>
         <CardImage>
-          <img src={DummyCardImage} alt="" loading="lazy" />
+          <img src={DummyCardImage} alt="" loading="eager" />
         </CardImage>
         <CardContainer>
           <p className="content--bold">Library District</p>

@@ -76,7 +76,6 @@
   display: grid;
   grid-gap: 1.5rem;
   padding: 2rem 1rem;
-  max-width: 50rem;
   margin-inline: auto;
   grid-template-columns: 1fr;
   @include mq("md") {
