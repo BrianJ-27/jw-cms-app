@@ -6,7 +6,7 @@ import { Settings } from "@styled-icons/fluentui-system-regular/Settings";
 
 const HeaderContainer = styled.header`
   background-color: var(--clr-bg-color);
-  padding: 1.25rem 1rem 0rem;
+  padding: 0rem 1rem;
 `;
 
 const ScreenReaderH1 = styled.h1`
