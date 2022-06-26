@@ -1,0 +1,56 @@
+// **************************************
+// FLEXBOX STYLES
+// **************************************
+@use "../utilities" as *;
+
+/*------FLEXBOX LAYOUT STYLES-----------*/
+
+//flex styles
+.flex__container {
+  flex-basis: 100%;
+  @include flex_me();
+  &--column {
+    @include flex_me($dir: column);
+  }
+  &--column-center {
+    @include flex_me($dir: column, $just: center);
+  }
+  &--column-v-center {
+    @include flex_me($dir: column, $vertAlign: center);
+  }
+  &--column-between {
+    @include flex_me($dir: column, $just: space-between);
+  }
+  &--column-centered-fully {
+    @include flex_me($dir: column, $just: center, $vertAlign: center);
+  }
+
+  &--row-reverse {
+    @include mq("md") {
+      @include flex_me($dir: row-reverse);
+    }
+  }
+
+  &--between {
+    @include flex_me($just: space-between, $wrap: wrap);
+  }
+  &--between-center {
+    @include flex_me($just: space-between, $vertAlign: center);
+  }
+
+  &--around {
+    @include flex_me($just: space-around);
+  }
+  &--h-end {
+    @include flex_me($just: flex-end);
+  }
+  &--v-end {
+    @include flex_me($vertAlign: flex-end);
+  }
+  &--v-center {
+    @include flex_me($vertAlign: center);
+  }
+  &--centered-fully {
+    @include flex_me($vertAlign: center, $just: center);
+  }
+}

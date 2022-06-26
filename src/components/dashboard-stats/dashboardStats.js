@@ -8,18 +8,28 @@ const StatsContainer = styled.div`
   overflow: hidden;
   box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
     rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  @media only screen and (min-width: 768px) {
+    box-shadow: none;
+    background-color: transparent;
+  }
 `;
 
 const StatsWrapper = styled.div`
-  /* box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset,
-    rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset; */
+  padding: 0.5rem;
 `;
 
 const DashBoardStats = styled.div`
-  padding: 20px 15px;
+  padding: 20px 25px;
+  @media only screen and (min-width: 768px) {
+    background-color: var(--clr-bg-light);
+    border-radius: 15px;
+    width: 300px;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 2px 5px -1px,
+      rgba(0, 0, 0, 0.3) 0px 1px 3px -1px;
+  }
 `;
 
-const dashboardStats = () => {
+const dashboardStats = ({ congregation }) => {
   let today = new Date().toDateString();
   let currrentTime = new Date().toLocaleTimeString(); // for now
   return (
@@ -28,7 +38,7 @@ const dashboardStats = () => {
         <StatsWrapper className="flex__container--around ctr__txt">
           <DashBoardStats>
             <p className="content--bold">Congregation</p>
-            <p className="content">East Tampa</p>
+            <p className="content">{congregation}</p>
           </DashBoardStats>
           <DashBoardStats>
             <p className="content--bold">Today</p>

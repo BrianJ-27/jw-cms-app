@@ -11,7 +11,7 @@ import NoMatch from "./components/pages/NotFoundPage";
 
 const App = () => {
   const [profile, setProfile] = useState({
-    firstName: "Brian",
+    firstName: "Ally",
     lastName: "Johnson",
     role: "Administrator",
     congregation: "East Tampa",
@@ -46,7 +46,10 @@ const App = () => {
             />
           }
         />
-        <Route path="/dashboard" element={<Dashboard />} />
+        <Route
+          path="/dashboard"
+          element={<Dashboard congregation={profile.congregation} />}
+        />
         <Route path="/addshift" element={<AddShift />} />
         <Route path="/cartlocation" element={<CartLocation />} />
         <Route path="/publishers" element={<Publishers />} />

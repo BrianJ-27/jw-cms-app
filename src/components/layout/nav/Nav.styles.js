@@ -4,6 +4,10 @@ import styled from "styled-components";
 export const Navigation = styled.nav`
   background-color: var(--clr-bg-light);
   padding: 0 1rem 0 0.5rem;
+  border-radius: 15px 15px 0px 0px;
+  @media only screen and (min-width: 768px) {
+    border-radius: 0px 15px 15px 0px;
+  }
 `;
 // Nav ul Styles
 export const NavWrapper = styled.ul`
@@ -14,8 +18,7 @@ position: relative;
   @media only screen and (min-width: 768px) {
     flex-direction: column;
     justify-content: unset;
-    padding-top: 15rem;
-    min-height: 100vh;
+    padding-top: 5rem;
   }
 
   // Nav List Item Styles
@@ -34,14 +37,16 @@ position: relative;
     }
     @media only screen and (min-width: 768px) {
       &:nth-of-type(5) {
-        border-top: 1px solid var(--clr-accent-color);
+        border-top: 1px solid var(--clr-primary-color);
         margin-top: auto;
+        padding-bottom: 2rem;
       }
     }
   }
 
   // Nav Link Styles
   a {
+    --fp-weight-main:600;
     &.nav__link--active {
       color: var(--clr-bg-light);
     }
@@ -51,7 +56,8 @@ position: relative;
     text-transform: uppercase;
     text-decoration: none;
     transition: color 0.5s;
-    font-size: 0.5rem;
+    font-size: clamp(0.5rem, 2.5vw, .9rem);
+
     &:link {
       color: var(--clr-bg-dark);
     }
@@ -70,6 +76,7 @@ position: relative;
 
     @media only screen and (min-width: 768px) {
       flex-direction: row;
+      font-weight: var(--fp-weight-main);
     }
     // Navigation Icon Styles
     svg {

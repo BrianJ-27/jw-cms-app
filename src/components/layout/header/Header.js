@@ -2,7 +2,7 @@ import React from "react";
 import ProfileBlock from "../profile/index";
 import styled from "styled-components";
 import StyledButton from "../../button/button";
-import { Bell } from "@styled-icons/boxicons-solid/Bell";
+import { Bell } from "@styled-icons/boxicons-regular/Bell";
 
 const HeaderContainer = styled.header`
   background-color: var(--clr-bg-color);

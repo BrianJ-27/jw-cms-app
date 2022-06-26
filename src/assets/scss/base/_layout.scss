@@ -1,52 +1,8 @@
 // **************************************
-// LAYOUT STYLES
+// GRID STYLES (BRINGING IN FLEXBOX STYLES TOO)
 // **************************************
 @use "../utilities" as *;
-
-/*------FLEXBOX LAYOUT STYLES-----------*/
-
-//flex styles
-.flex__container {
-  flex-basis: 100%;
-  @include flex_me();
-  &--column {
-    @include flex_me($dir: column);
-  }
-  &--column-center {
-    @include flex_me($dir: column, $just: center);
-  }
-  &--column-v-center {
-    @include flex_me($dir: column, $vertAlign: center);
-  }
-  &--column-between {
-    @include flex_me($dir: column, $just: space-between);
-  }
-  &--column-centered-fully {
-    @include flex_me($dir: column, $just: center, $vertAlign: center);
-  }
-  &--between {
-    @include flex_me($just: space-between);
-  }
-  &--between-center {
-    @include flex_me($just: space-between, $vertAlign: center);
-  }
-
-  &--around {
-    @include flex_me($just: space-around);
-  }
-  &--h-end {
-    @include flex_me($just: flex-end);
-  }
-  &--v-end {
-    @include flex_me($vertAlign: flex-end);
-  }
-  &--v-center {
-    @include flex_me($vertAlign: center);
-  }
-  &--centered-fully {
-    @include flex_me($vertAlign: center, $just: center);
-  }
-}
+@use "../base/flex" as *;
 
 /*------GRID LAYOUT STYLES-----------*/
 //Base Grid Layout for Whole site
@@ -54,6 +10,7 @@
   min-height: 100vh;
   max-width: 100rem;
   display: grid;
+  margin-inline: auto;
   grid-auto-columns: 1fr;
   grid-template-rows: 80px auto 70px;
   grid-template-areas:
@@ -73,12 +30,15 @@
 // Main Content Grid Layout
 .main__grid--wrapper {
   display: grid;
-  grid-gap: 1.5rem;
   padding: 0rem 1rem;
-  margin-inline: auto;
   grid-template-columns: 1fr;
+  grid-template-areas:
+    "announcements"
+    "shifts";
   @include mq("md") {
-    grid-template-columns: 2fr 1fr;
+    grid-gap: 2rem;
+    grid-template-columns: 1.2fr 1fr;
+    grid-template-areas: "shifts announcements";
     padding: 1rem;
   }
 }
@@ -94,4 +54,12 @@
 
 .main {
   grid-area: main;
+}
+
+.shifts {
+  grid-area: shifts;
+}
+
+.announcements {
+  grid-area: announcements;
 }

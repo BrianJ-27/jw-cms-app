@@ -35,6 +35,14 @@ const Button = styled.button`
      font-weight: var(--fp-weight-main);
      margin-top: unset;
      padding: 10px;
+     @media only screen and (min-width: 768px) {
+      width: 100%;
+      margin-top: 1rem;
+     }
+  @media only screen and (min-width: 1024px) {
+      width: unset;
+      margin-top: 1rem;
+    }
     `};
 
   /* --- Re-useable SVG Button Styles --- */

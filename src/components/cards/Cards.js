@@ -8,6 +8,7 @@ const CardWrapper = styled.div`
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   position: relative;
+  max
 `;
 
 const CardImage = styled.div`
@@ -17,10 +18,17 @@ const CardImage = styled.div`
   max-width: 100%;
   font-size: 0;
   height: auto;
+  @media only screen and (min-width: 768px) {
+    width: 42%;
+    border-radius: 0px 10px 10px 0px;
+  }
   img {
-    object-fit: contain;
-    height: auto;
+    object-fit: cover;
+    height: 100%;
     width: 100%;
+    @media only screen and (min-width: 768px) {
+      background-color: var(--clr-bg-light);
+    }
   }
 `;
 
@@ -31,6 +39,10 @@ const CardContainer = styled.div`
   border-radius: 0px 0px 10px 10px;
   p {
     color: var(--clr-bg-dark);
+    font-size: clamp(0.9rem, 3vw, 1.2rem);
+  }
+  @media only screen and (min-width: 768px) {
+    width: 58%;
   }
 `;
 
@@ -55,7 +67,7 @@ fill: var(--clr-primary-color);
 const Cards = () => {
   return (
     <React.Fragment>
-      <CardWrapper>
+      <CardWrapper className="flex__container--row-reverse">
         <CardIconContainer className="flex__container--h-end">
           <StyledButton svg_interactive>
             <EditShift aria-hidden />
@@ -64,8 +76,9 @@ const Cards = () => {
         <CardImage>
           <img src={DummyCardImage} alt="" loading="eager" />
         </CardImage>
-        <CardContainer>
+        <CardContainer className="flex__container--column-center">
           <p className="content--bold">Library District</p>
+          <p>*Plese arrive to your shift 15mins early</p>
           <div className="flex__container--between">
             <CardBody>
               <li className="content--bold">Shift Period</li>

@@ -35,12 +35,12 @@
 .title__secondary {
   --fp-weight-main: 600;
   @include text-prop(
-    $size: clamp(1.2em, 3vw, 2rem),
+    $size: clamp(1.2em, 3vw, 1.5rem),
     $f-weight: var(--fp-weight-main),
     $color: var(--clr-bg-dark)
   );
 
-  margin: 2.5rem 0rem 1rem;
+  margin: 2rem 0rem 1rem;
 }
 
 /*----CONTENT STYLES----*/
@@ -53,9 +53,12 @@
   );
 
   &--bold {
+    &:nth-child(2) {
+      background-color: blue;
+    }
     --fp-weight-main: 600;
     @include text-prop(
-      $size: clamp(0.67rem, 3vw, 1.2rem),
+      $size: clamp(0.67rem, 3vw, 0.9rem),
       $f-weight: var(--fp-weight-main),
       $l-height: 1.6,
       $color: var(--clr-primary-color)
