@@ -7,18 +7,31 @@ export const Navigation = styled.nav`
 `;
 // Nav ul Styles
 export const NavWrapper = styled.ul`
+position: relative;
   list-style-type: none;
   width: 100%;
+  height: 100%;
   @media only screen and (min-width: 768px) {
     flex-direction: column;
     justify-content: unset;
     padding-top: 15rem;
+    min-height: 100vh;
   }
 
   // Nav List Item Styles
   li {
     display: flex;
     align-items: center;
+    &:nth-of-type(3)::before {
+      content: ""
+        display: block;
+        width: 30px;
+        background-color: var(--clr-bg-light);
+        background: blue;
+        position: absolute;
+        top: 0px; 
+     
+    }
     @media only screen and (min-width: 768px) {
       &:nth-of-type(5) {
         border-top: 1px solid var(--clr-accent-color);

@@ -1,5 +1,5 @@
 import React from "react";
-import MainNavigation from "../nav-links/NavLinks";
+import NavContainer from "../nav-containter/NavContainer";
 import { Navigation, NavLogoContainer } from "../Nav.styles";
 import NavLogo from "../../../logo/logo";
 
@@ -19,7 +19,7 @@ const DashNav = ({
 
   return (
     <Navigation className="nav">
-      <div style={{ height: "100%" }} className="flex__container--between">
+      <div style={{ height: "100%" }}>
         <NavLogoContainer className="flex__container--column-between">
           <NavLogo />
 
@@ -28,7 +28,7 @@ const DashNav = ({
             <abbr title="Congregation Ministry Scheduler">CMS </abbr>
           </p> */}
         </NavLogoContainer>
-        <MainNavigation loggedOut={loggedOut} />
+        <NavContainer loggedOut={loggedOut} />
       </div>
     </Navigation>
   );

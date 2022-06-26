@@ -2,12 +2,12 @@ import React from "react";
 import styled from "styled-components";
 import StyledButton from "../button/button";
 import DummyCardImage from "../../assets/images/hero-image-2.jpeg";
-import { Add } from "@styled-icons/fluentui-system-filled/Add";
-import { EditAlt } from "@styled-icons/boxicons-regular/EditAlt";
+import { CalendarEdit } from "@styled-icons/fluentui-system-regular/CalendarEdit";
 
 const CardWrapper = styled.div`
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
+  position: relative;
 `;
 
 const CardImage = styled.div`
@@ -39,19 +39,15 @@ const CardBody = styled.ul`
 `;
 
 const CardIconContainer = styled.div`
-  padding-bottom: 0.5rem;
+  position: absolute;
+  right: 0;
+  top: -40px;
 `;
 
-const AddShift = styled(Add)`
- width 25px;
- margin-right: .5rem;
- fill: var(--clr-bg-dark);
-`;
-
-const EditShift = styled(EditAlt)`
-width 25px;
-margin-right: 1rem;
-fill: var(--clr-bg-dark);
+const EditShift = styled(CalendarEdit)`
+width 30px;
+margin-right: .3rem;
+fill: var(--clr-primary-color);
 &:hover{
   background: none;
 }
@@ -61,9 +57,6 @@ const Cards = () => {
     <React.Fragment>
       <CardWrapper>
         <CardIconContainer className="flex__container--h-end">
-          <StyledButton svg_interactive>
-            <AddShift aria-hidden />
-          </StyledButton>
           <StyledButton svg_interactive>
             <EditShift aria-hidden />
           </StyledButton>

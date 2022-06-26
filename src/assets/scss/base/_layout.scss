@@ -51,19 +51,18 @@
 /*------GRID LAYOUT STYLES-----------*/
 //Base Grid Layout for Whole site
 .grid__wrapper {
-  height: 100vh;
+  min-height: 100vh;
   max-width: 100rem;
-  margin-inline: auto;
   display: grid;
   grid-auto-columns: 1fr;
-  grid-template-rows: 100px auto 70px;
+  grid-template-rows: 80px auto 70px;
   grid-template-areas:
     "header"
     "main "
     "navigation";
 
   @include mq("md") {
-    grid-template-columns: 80px 3fr 3fr;
+    grid-template-columns: auto 5fr 5fr;
     grid-template-areas:
       "navigation header header"
       "navigation main main"
@@ -71,11 +70,11 @@
   }
 }
 
-//Main Content Grid Layout
+// Main Content Grid Layout
 .main__grid--wrapper {
   display: grid;
   grid-gap: 1.5rem;
-  padding: 2rem 1rem;
+  padding: 0rem 1rem;
   margin-inline: auto;
   grid-template-columns: 1fr;
   @include mq("md") {

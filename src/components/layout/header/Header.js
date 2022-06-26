@@ -2,7 +2,7 @@ import React from "react";
 import ProfileBlock from "../profile/index";
 import styled from "styled-components";
 import StyledButton from "../../button/button";
-import { Settings } from "@styled-icons/fluentui-system-regular/Settings";
+import { Bell } from "@styled-icons/boxicons-solid/Bell";
 
 const HeaderContainer = styled.header`
   background-color: var(--clr-bg-color);
@@ -23,7 +23,7 @@ const ScreenReaderH1 = styled.h1`
 `;
 
 const LogoContainer = styled.div`
-  bottom: translateY(-20%);
+  transform: translateY(25%);
   left: 1rem;
   text-align: center;
   display: flex;
@@ -35,9 +35,10 @@ const LogoContainer = styled.div`
   }
 `;
 
-const StyledSettings = styled(Settings)`
+const StyledSettings = styled(Bell)`
   color: var(--clr-bg-dark);
-  width: clamp(45px, 6vw, 50px);
+  width: clamp(35px, 6vw, 45px);
+  fill: var(--clr-primary-color);
 `;
 
 const Header = ({ userProfile }) => {
@@ -52,7 +53,7 @@ const Header = ({ userProfile }) => {
         </LogoContainer>
       </div>
       <StyledButton svg_interactive>
-        <StyledSettings aria-hidden tabIndex="0" />
+        <StyledSettings aria-hidden tabIndex="-1" />
       </StyledButton>
     </HeaderContainer>
   );
