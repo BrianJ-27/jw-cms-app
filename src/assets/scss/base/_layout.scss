@@ -8,9 +8,7 @@
 //Base Grid Layout for Whole site
 .grid__wrapper {
   min-height: 100vh;
-  max-width: 100rem;
   display: grid;
-  margin-inline: auto;
   grid-auto-columns: 1fr;
   grid-template-rows: 80px auto 70px;
   grid-template-areas:
@@ -19,7 +17,7 @@
     "navigation";
 
   @include mq("md") {
-    grid-template-columns: auto 5fr 5fr;
+    grid-template-columns: 1.5fr 5fr 5fr;
     grid-template-areas:
       "navigation header header"
       "navigation main main"

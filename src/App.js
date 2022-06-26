@@ -11,7 +11,7 @@ import NoMatch from "./components/pages/NotFoundPage";
 
 const App = () => {
   const [profile, setProfile] = useState({
-    firstName: "Ally",
+    firstName: "Nestor",
     lastName: "Johnson",
     role: "Administrator",
     congregation: "East Tampa",
