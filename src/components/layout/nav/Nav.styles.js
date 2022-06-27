@@ -2,6 +2,11 @@ import styled from "styled-components";
 
 // Main Dashboard Navigation Styles
 export const Navigation = styled.nav`
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 5;
   background-color: var(--clr-bg-light);
   padding: 0 1rem 0 0.5rem;
   border-radius: 15px 15px 0px 0px;
