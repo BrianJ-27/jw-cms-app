@@ -1,18 +1,16 @@
 import React from "react";
-import DashboardStats from "../dashboard-stats/dashboardStats";
+import WelcomeBanner from "../welcome-banner/WelcomeBanner";
 import Cards from "../cards/Cards";
-import DashboardAnnouncements from "../announcements/Announcements";
+import Announcements from "../announcements/Announcements";
 
-const Dashboard = ({ congregation }) => {
+const Dashboard = ({ userProfile }) => {
   return (
     <main className="main">
-      <DashboardStats congregation={congregation} />
+      <WelcomeBanner userProfile={userProfile} />
       <div className="main__grid--wrapper">
         <section className="announcements" aria-label="Ministry Announcements">
           <h2 className="title__secondary">Announcements</h2>
-          <div>
-            <DashboardAnnouncements />
-          </div>
+          <Announcements />
         </section>
         <section className="shifts" aria-label="Upcoming Shifts Card">
           <h2 className="title__secondary">Upcoming Shifts </h2>

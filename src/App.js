@@ -48,7 +48,7 @@ const App = () => {
         />
         <Route
           path="/dashboard"
-          element={<Dashboard congregation={profile.congregation} />}
+          element={<Dashboard userProfile={profile} />}
         />
         <Route path="/addshift" element={<AddShift />} />
         <Route path="/cartlocation" element={<CartLocation />} />
