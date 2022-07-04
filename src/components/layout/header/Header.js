@@ -2,11 +2,14 @@ import React from "react";
 import ProfileBlock from "../profile/index";
 import styled from "styled-components";
 import StyledButton from "../../button/button";
-import { Bell } from "@styled-icons/boxicons-regular/Bell";
+import { ArrowIosDownward } from "@styled-icons/evaicons-solid/ArrowIosDownward";
 
 const HeaderContainer = styled.header`
-  background-color: var(--clr-bg-color);
-  padding: 0rem 1rem;
+  position: sticky;
+  top: 0;
+  background-color: var(--clr-bg-light);
+  border-bottom: 1px solid var(--clr-bg-shade);
+  width: 100%;
 `;
 
 const ScreenReaderH1 = styled.h1`
@@ -22,39 +25,44 @@ const ScreenReaderH1 = styled.h1`
   border-width: 0;
 `;
 
+const HeaderLogo = styled.p`
+  --fp-weight-main: 600;
+  font-weight: var(--fp-weight-main);
+  color: var(--clr-primary-color);
+  font-size: clamp(1rem, 6vw, 1.5rem);
+  padding-left: 1rem;
+`;
+
 const LogoContainer = styled.div`
-  transform: translateY(25%);
   left: 1rem;
   text-align: center;
   display: flex;
-  svg {
-    fill: var(--clr-primary-color);
-    font-size: 3.5rem;
-
-    padding-right: 2px;
-  }
+  justify-content: center;
+  justify-content: flex-end;
 `;
 
-const StyledSettings = styled(Bell)`
-  color: var(--clr-bg-dark);
-  width: clamp(35px, 6vw, 45px);
-  fill: var(--clr-primary-color);
+const Options = styled(ArrowIosDownward)`
+  width: 20px;
+  margin: 5px 10px 5px 0px;
+  color: var(--clr-primary-color);
 `;
 
 const Header = ({ userProfile }) => {
   return (
     <HeaderContainer className="header flex__container--between-center">
       <div>
-        <div>
-          <ScreenReaderH1>Cart Ministry Scheduler App</ScreenReaderH1>
-        </div>
-        <LogoContainer>
-          <ProfileBlock userProfile={userProfile} />
-        </LogoContainer>
+        <ScreenReaderH1>Cart Ministry Scheduler App</ScreenReaderH1>
+        <HeaderLogo>
+          <abbr title="Congregation Ministry Scheduler">CMS </abbr>
+        </HeaderLogo>
       </div>
-      <StyledButton svg_interactive>
-        <StyledSettings aria-hidden tabIndex="-1" />
-      </StyledButton>
+
+      <LogoContainer>
+        <ProfileBlock userProfile={userProfile} />
+        <StyledButton svg_interactive>
+          <Options aria-hidden />
+        </StyledButton>
+      </LogoContainer>
     </HeaderContainer>
   );
 };

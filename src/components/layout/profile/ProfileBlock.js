@@ -7,36 +7,46 @@ const ProfileContainer = styled.div`
   padding-bottom: 5px;
 `;
 
-const ProfileGreeting = styled.p`
-  --fp-weight-main: 700;
-  font-size: clamp(0.8rem, 4vw, 1.5rem);
-  color: var(--clr-primary-color);
-  font-weight: var(--fp-weight-main);
-`;
-
 const ProfileName = styled.p`
   --fp-weight-main: 800;
-  font-size: clamp(0rem, 6vw, 1.6rem);
-  text-align: left;
+  font-size: clamp(0.5rem, 4vw, 1.1rem);
   font-weight: var(--fp-weight-main);
   line-height: 1.4;
-  /* color: var(--clr-primary-color); */
+  padding-right: 5px;
 `;
 
 const ProfileCaption = styled.div`
-  padding-left: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 0rem 0.4rem;
+`;
+
+const ProfileCongregation = styled.div`
+  --fp-weight-main: 600;
+  font-weight: var(--fp-weight-main);
+  color: var(--clr-bg-dark);
+  font-size: clamp(0.5rem, 4vw, 0.7rem);
+`;
+
+const Separator = styled.span`
+  color: var(--clr-primary-color);
 `;
 
 export default function ProfileBlock({ userProfile }) {
-  const firstName = `${userProfile.firstName}`;
+  const fullName = `${userProfile.firstName} ${userProfile.lastName}`;
+  const congregation = `${userProfile.congregation}`;
 
   return (
     <ProfileContainer>
-      <ProfilePicture profilePicture={userProfile.profilePicture} />
       <ProfileCaption>
-        <ProfileGreeting>Welcome Back!</ProfileGreeting>
-        <ProfileName data-testid="name">{firstName}</ProfileName>
+        <ProfileName data-testid="name">{fullName}</ProfileName>
+        <ProfileCongregation data-testid="name">
+          {congregation} <Separator>|</Separator> Congregation
+        </ProfileCongregation>
       </ProfileCaption>
+      <ProfilePicture profilePicture={userProfile.profilePicture} />
     </ProfileContainer>
   );
 }

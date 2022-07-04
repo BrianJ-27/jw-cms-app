@@ -13,8 +13,5 @@ export default function ProfilePicture({ profilePicture }) {
 const Image = styled.img`
   border-radius: 50%;
   background-color: #fff;
-  width: 60px;
-  @media only screen and (min-width: 768px) {
-    width: 55px;
-  }
+  width: 40px;
 `;

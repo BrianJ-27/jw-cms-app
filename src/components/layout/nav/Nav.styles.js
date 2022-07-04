@@ -1,19 +1,5 @@
 import styled from "styled-components";
 
-// Main Dashboard Navigation Styles
-export const Navigation = styled.nav`
-  position: fixed;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  z-index: 5;
-  background-color: var(--clr-bg-light);
-  padding: 0 1rem 0 0.5rem;
-  border-radius: 15px 15px 0px 0px;
-  @media only screen and (min-width: 768px) {
-    border-radius: 0px 15px 15px 0px;
-  }
-`;
 // Nav ul Styles
 export const NavWrapper = styled.ul`
 position: relative;
@@ -42,9 +28,8 @@ position: relative;
     }
     @media only screen and (min-width: 768px) {
       &:nth-of-type(5) {
-        border-top: 1px solid var(--clr-primary-color);
+        border-top: 1px solid var(--clr-bg-shade);
         margin-top: auto;
-        padding-bottom: 2rem;
       }
     }
   }
@@ -53,7 +38,7 @@ position: relative;
   a {
     --fp-weight-main:600;
     &.nav__link--active {
-      color: var(--clr-bg-light);
+      color: var(--clr-primary-color);
     }
     display: flex;
     flex-direction: column;
@@ -94,26 +79,6 @@ position: relative;
         padding-right: 5px;
         padding-bottom: 0px;
       }
-    }
-  }
-`;
-
-// Nav Logo Container
-export const NavLogoContainer = styled.div`
-  display: none;
-  @media only screen and (min-width: 768px) {
-    display: flex;
-    svg {
-      fill: var(--clr-accent-color);
-      border-right: 2px solid var(--clr-accent-color);
-    }
-    p {
-      writing-mode: vertical-rl;
-      text-orientation: upright;
-      padding-left: 4px;
-      font-family: Georgia, serif;
-      letter-spacing: 1px;
-      font-size: 2rem;
     }
   }
 `;

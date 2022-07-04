@@ -9,8 +9,10 @@
 .grid__wrapper {
   min-height: 100vh;
   display: grid;
+  max-width: 75rem;
+  margin-inline: auto;
   grid-auto-columns: 1fr;
-  grid-template-rows: 80px auto 70px;
+  grid-template-rows: 60px auto 70px;
   grid-template-areas:
     "header"
     "main "
@@ -34,7 +36,7 @@
     "announcements"
     "shifts";
   @include mq("md") {
-    grid-gap: 2rem;
+    grid-gap: 3rem;
     grid-template-columns: 1.2fr 1fr;
     grid-template-areas: "shifts announcements";
     padding: 1rem;
