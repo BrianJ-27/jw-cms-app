@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-const StatsContainer = styled.div`
+const BannerContainer = styled.div`
   background-color: var(--clr-primary-color);
   margin: 1rem;
   padding: 1rem;
@@ -31,12 +31,12 @@ const StatsContainer = styled.div`
   }
 `;
 
-const dashboardStats = ({ userProfile }) => {
+const WelcomeBanner = ({ userProfile }) => {
   const firstName = `${userProfile.firstName}`;
   let today = new Date().toDateString();
   return (
     <React.Fragment>
-      <StatsContainer>
+      <BannerContainer>
         <span className="flex__container--v-center">
           <p>Hi {firstName}!</p>
         </span>
@@ -45,9 +45,9 @@ const dashboardStats = ({ userProfile }) => {
           Welcome to the Cart Ministry Scheduler. You will be able to view your
           current cart assignment, cart location and request new assignments.
         </p>
-      </StatsContainer>
+      </BannerContainer>
     </React.Fragment>
   );
 };
 
-export default dashboardStats;
+export default WelcomeBanner;

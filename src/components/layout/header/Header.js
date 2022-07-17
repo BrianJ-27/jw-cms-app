@@ -28,7 +28,7 @@ const ScreenReaderH1 = styled.h1`
 const HeaderLogo = styled.p`
   --fp-weight-main: 600;
   font-weight: var(--fp-weight-main);
-  color: var(--clr-primary-color);
+  color: var(--clr-bg-dark);
   font-size: clamp(1rem, 6vw, 1.5rem);
   padding-left: 1rem;
 `;

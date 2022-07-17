@@ -8,7 +8,6 @@ const CardWrapper = styled.div`
   border-radius: 10px;
   box-shadow: rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px;
   position: relative;
-  max
 `;
 
 const CardImage = styled.div`
@@ -33,6 +32,7 @@ const CardImage = styled.div`
 `;
 
 const CardContainer = styled.div`
+  position: relative;
   background-color: var(--clr-bg-light);
   line-height: 1.6;
   padding: 10px;
@@ -48,6 +48,13 @@ const CardContainer = styled.div`
 
 const CardBody = styled.ul`
   padding-top: 0.5rem;
+  padding-right: 0.5rem;
+  &:nth-of-type(1) {
+    border-right: 1px solid var(--clr-bg-shade);
+  }
+  &:nth-of-type(2) {
+    padding-left: 0.5rem;
+  }
 `;
 
 const CardIconContainer = styled.div`
@@ -64,6 +71,7 @@ fill: var(--clr-primary-color);
   background: none;
 }
 `;
+
 const Cards = () => {
   return (
     <React.Fragment>
@@ -76,18 +84,26 @@ const Cards = () => {
         <CardImage>
           <img src={DummyCardImage} alt="" loading="eager" />
         </CardImage>
+        {/*</Wrapper apiKey={"AIzaSyDq9w4xFDeeXq5d0FCeL4-yGmNT6bFq0yw"}>
+          <MyMapComponent />
+</>*/}
         <CardContainer className="flex__container--column-center">
           <p className="content--bold">Library District</p>
-          <p>*Plese arrive to your shift 15mins early</p>
+          <p>*Please arrive to your shift 15mins early</p>
           <div className="flex__container--between">
-            <CardBody>
-              <li className="content--bold">Shift Period</li>
-              <li className="content">8am - 11am</li>
-            </CardBody>
-            <CardBody>
-              <li className="content--bold">Shift Hrs</li>
-              <li className="content">3hrs</li>
-            </CardBody>
+            <div
+              className="flex__container--around"
+              style={{ position: "relative" }}
+            >
+              <CardBody>
+                <li className="content--bold">Shift Period</li>
+                <li className="content">8am - 11am</li>
+              </CardBody>
+              <CardBody>
+                <li className="content--bold">Shift Hrs</li>
+                <li className="content">3hrs</li>
+              </CardBody>
+            </div>
             <StyledButton full_details>Full Details</StyledButton>
           </div>
         </CardContainer>

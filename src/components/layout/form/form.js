@@ -1,5 +1,5 @@
 import React from "react";
-import CustomForm from "./formLogin";
+import FormLogin from "./formLogin";
 import styled from "styled-components";
 
 const FormContainer = styled.div`
@@ -12,14 +12,14 @@ const FormContainer = styled.div`
   }
 `;
 
-const Form = ({ setShowLayout, setCurrentUser }) => {
+const Form = ({ userProfile }) => {
   return (
     <FormContainer className="flex__container--column-center">
       <header>
         <h1 className="title__primary--form">Publisher Portal</h1>
       </header>
 
-      <CustomForm setShowLayout={setShowLayout} />
+      <FormLogin userProfile={userProfile} />
     </FormContainer>
   );
 };

@@ -16,36 +16,16 @@ const App = () => {
     role: "Administrator",
     congregation: "East Tampa",
     profilePicture: "https://avatars.githubusercontent.com/u/45458265?v=4",
+    isLoggedIn: false,
   });
-
-  const [currentUser, setCurrentUser] = useState(false);
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   return (
     <div className="grid__wrapper">
-      {isLoggedIn && (
-        <React.Fragment>
-          <Header userProfile={profile} />
-          <DashboardNav
-            currentUser={currentUser}
-            setCurrentUser={setCurrentUser}
-            showLayout={isLoggedIn}
-            setShowLayout={setIsLoggedIn}
-          />
-        </React.Fragment>
-      )}
-
+      <React.Fragment>
+        <Header userProfile={profile} />
+        <DashboardNav />
+      </React.Fragment>
       <Routes>
-        <Route
-          path="/"
-          element={
-            <LoginPage
-              setShowLayout={setIsLoggedIn}
-              setCurrentUser={setCurrentUser}
-              setProfile={setProfile}
-            />
-          }
-        />
         <Route
           path="/dashboard"
           element={<Dashboard userProfile={profile} />}
@@ -53,6 +33,10 @@ const App = () => {
         <Route path="/addshift" element={<AddShift />} />
         <Route path="/cartlocation" element={<CartLocation />} />
         <Route path="/publishers" element={<Publishers />} />
+        <Route
+          path="/"
+          element={<LoginPage userProfile={profile} setProfile={setProfile} />}
+        />
         <Route path="*" element={<NoMatch />} />
       </Routes>
     </div>

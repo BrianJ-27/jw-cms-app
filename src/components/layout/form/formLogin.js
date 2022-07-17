@@ -23,14 +23,12 @@ const FormLink = styled.a`
   margin-top: 0.5rem;
 `;
 
-const FormLogin = ({ setShowLayout, submitForm }) => {
-  const { handleUpdate, handleLogin, formData, errors } = useForm(
-    validateForm,
-    setShowLayout
-  );
+const FormLogin = ({ userProfile }) => {
+  const { handleUpdate, handleSignin, formData, errors } =
+    useForm(validateForm);
 
   return (
-    <form action="index.html" method="get" onSubmit={handleLogin}>
+    <form action="index.html" method="get" onSubmit={handleSignin}>
       <fieldset style={{ padding: "0rem" }}>
         <FormLegend>Log in</FormLegend>
         <div className="flex__container--column">

@@ -9,7 +9,6 @@ function validateForm(formData) {
   if (!formData.password) {
     errors.password = "Password cannot be empty";
   }
-  console.log(errors);
   return errors;
 }
 

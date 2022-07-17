@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 
-const useForm = (validate, setShowLayout) => {
+const useForm = (validate) => {
   // Set initial Form State values to empty strings
   const [formData, setFormData] = useState({
     email: "",
@@ -22,14 +22,15 @@ const useForm = (validate, setShowLayout) => {
   let history = useNavigate();
 
   // Handles the action when user clicks on the form button and resets the form
-  const handleLogin = (e) => {
+  const handleSignin = (e) => {
     e.preventDefault();
     setErrors(validate(formData));
+    console.log(formData.email);
+    console.log(formData.password);
     history("/dashboard");
-    setShowLayout(true);
   };
 
-  return { handleUpdate, handleLogin, formData, errors };
+  return { handleUpdate, handleSignin, formData, errors };
 };
 
 export default useForm;

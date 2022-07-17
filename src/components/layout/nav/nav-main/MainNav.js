@@ -22,23 +22,10 @@ const Navigation = styled.nav`
   }
 `;
 
-const DashNav = ({
-  currentUser,
-  showLayout,
-  setShowLayout,
-  setCurrentUser,
-}) => {
-  const loggedOut = () => {
-    /*This one piece of code is toggling 
-      the nav and header components out of the DOM
-    */
-    setShowLayout(!showLayout);
-    setCurrentUser(false);
-  };
-
+const DashNav = ({ userProfile }) => {
   return (
     <Navigation className="nav">
-      <UlNavContainer loggedOut={loggedOut} />
+      <UlNavContainer />
     </Navigation>
   );
 };

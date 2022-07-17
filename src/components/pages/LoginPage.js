@@ -67,7 +67,7 @@ const ImageQuote = styled.div`
   }
 `;
 
-const LoginPage = ({ setShowLayout, setCurrentUser }) => {
+const LoginPage = ({ userProfile }) => {
   return (
     <LoginScreenWrapper className="flex__container--column-centered-fully">
       <ImageContainer>
@@ -78,13 +78,13 @@ const LoginPage = ({ setShowLayout, setCurrentUser }) => {
               <span className="content__highlight">Evangelizer</span>, fully
               accomplish your ministry."
             </p>
-            <cite className="content__author"> - 2 Timothy 4:2</cite>
+            <cite className="content__author"> - 2 Timothy 4:5b</cite>
           </blockquote>
         </ImageQuote>
         <HeroImage />
       </ImageContainer>
       <FormContainer id="form">
-        <Form setShowLayout={setShowLayout} setCurrentUser={setCurrentUser} />
+        <Form userProfile={userProfile} />
       </FormContainer>
     </LoginScreenWrapper>
   );
