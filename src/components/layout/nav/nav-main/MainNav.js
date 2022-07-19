@@ -25,7 +25,7 @@ const Navigation = styled.nav`
 const DashNav = ({ userProfile }) => {
   return (
     <Navigation className="nav">
-      <UlNavContainer />
+      <UlNavContainer userProfile={userProfile} />
     </Navigation>
   );
 };

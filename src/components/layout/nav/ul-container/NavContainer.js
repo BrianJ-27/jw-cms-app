@@ -12,7 +12,7 @@ const NavLinkContainer = ({ currentUser, loggedOut }) => {
       <li className="flex__container--v-start">
         <Link
           className="nav__link flex__container--column-v-center"
-          to="/dashboard"
+          to="/dashboard/home"
         >
           <Dashboard className="nav__icon" />
           <span className="title"> Dashboard</span>
@@ -22,7 +22,7 @@ const NavLinkContainer = ({ currentUser, loggedOut }) => {
       <li className="flex__container--v-start">
         <Link
           className="nav__link flex__container--column-v-center"
-          to="/publishers"
+          to="/dashboard/publishers"
         >
           <PersonBoard className="nav__icon" />
           <span className="title">Publishers</span>
@@ -32,7 +32,7 @@ const NavLinkContainer = ({ currentUser, loggedOut }) => {
       <li className="flex__container--v-start">
         <Link
           className="nav__link--active flex__container--column-v-center"
-          to="/addshift"
+          to="/dashboard/addshift"
         >
           <AddToList className="nav__icon" />
           <span className="title">Add Shift</span>
@@ -42,7 +42,7 @@ const NavLinkContainer = ({ currentUser, loggedOut }) => {
       <li className="flex__container--v-start">
         <Link
           className="nav__link flex__container--column-v-center"
-          to="/cartlocation"
+          to="/dashboard/cartlocation"
         >
           <Location className="nav__icon" />
           <span className="title">Cart Locations</span>

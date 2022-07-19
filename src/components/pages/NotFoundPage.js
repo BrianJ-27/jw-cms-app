@@ -4,11 +4,9 @@ import { Link } from "react-router-dom";
 
 const PageContainer = styled.div`
   background-color: var(--clr-primary-color);
-  height: 100vh;
   width: 100%;
   display: grid;
   place-items: center;
-  position: absolute;
   p > a {
     color: var(--clr-bg-dark);
   }
