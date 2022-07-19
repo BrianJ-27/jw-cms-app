@@ -27,7 +27,7 @@ const useForm = (validate) => {
     setErrors(validate(formData));
     console.log(formData.email);
     console.log(formData.password);
-    history("/dashboard/*");
+    history("/dashboard/home");
   };
 
   return { handleUpdate, handleSignin, formData, errors };
