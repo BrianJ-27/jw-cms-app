@@ -1,7 +1,7 @@
 import React from "react";
 import ProfileBlock from "../profile/index";
 import styled from "styled-components";
-import StyledButton from "../../button/button";
+import StyledButton from "../../components/button/button";
 import { ArrowIosDownward } from "@styled-icons/evaicons-solid/ArrowIosDownward";
 
 const HeaderContainer = styled.header`

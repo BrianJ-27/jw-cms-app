@@ -1,7 +1,7 @@
 import React from "react";
 import Form from "../layout/form/form";
 import styled from "styled-components";
-import HeroImage from "../hero-image/heroImg";
+import HeroImage from "../components/hero-image/heroImg";
 
 const LoginScreenWrapper = styled.main`
   height: 100vh;

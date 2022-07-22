@@ -1,7 +1,7 @@
 import React from "react";
-import WelcomeBanner from "../welcome-banner/WelcomeBanner";
-import Cards from "../cards/Cards";
-import Announcements from "../announcements/Announcements";
+import WelcomeBanner from "../components/welcome-banner/WelcomeBanner";
+import Cards from "../components/cards/Cards";
+import Announcements from "../components/announcements/Announcements";
 
 const Dashboard = ({ userProfile }) => {
   return (

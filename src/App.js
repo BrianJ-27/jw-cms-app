@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import HomePageLogin from "./components/pages/HomePageLogin";
-import DashboardHome from "./components/pages/DashboardHome";
+import HomePageLogin from "./pages/HomePageLogin";
+import DashboardHome from "./pages/DashboardHome";
 import { Routes, Route } from "react-router-dom";
 
 const App = () => {
@@ -12,6 +12,8 @@ const App = () => {
     profilePicture: "https://avatars.githubusercontent.com/u/45458265?v=4",
     isLoggedIn: false,
   });
+
+  console.log(setProfile);
 
   return (
     <div className="grid__wrapper">

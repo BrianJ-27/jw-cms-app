@@ -1,8 +1,8 @@
 import React from "react";
 import useForm from "./useForm";
-import validateForm from "../../../helpers/validate";
-import StyledButton from "../../button/button";
-import FormField from "../../form-field/input-field";
+import validateForm from "../../helpers/validate";
+import StyledButton from "../../components/button/button";
+import FormField from "../../components/form-field/input-field";
 import styled from "styled-components";
 
 const FormGroup = styled.div`
