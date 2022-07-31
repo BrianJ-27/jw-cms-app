@@ -64,6 +64,8 @@ const Button = styled.button`
         color: unset;
       }
     `};
+
+
   ${(props) =>
     props.full_details &&
     css`
@@ -72,6 +74,17 @@ const Button = styled.button`
      font-weight: var(--fp-weight-main);
      margin-top: unset;
      padding: 15px ;
+    `};
+
+    ${(props) =>
+      props.publisher &&
+      css`
+      --fp-weight-main: 400;
+     font-size: clamp(0.8rem, 3vw, 1rem)
+     font-weight: var(--fp-weight-main);
+     margin-top: unset;
+     margin-left: 10px;
+     padding: 12px;
     `};
 `;
 

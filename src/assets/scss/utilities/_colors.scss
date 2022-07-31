@@ -13,7 +13,8 @@ $colors: (
   // Primary Project Color
   primary: (
     color: hsl(353, 100%, 36%),
-    error: hsl(0, 100%, 50%)
+    error: hsl(0, 100%, 50%),
+    light: hsl(353, 100%, 95%)
   ),
   // Accent Project Color
   accent: (
@@ -24,6 +25,7 @@ $colors: (
     color:  hsl(180, 8%, 95%),
     light: hsl(255, 100%, 100%),
     shade: hsl(0, 0%, 70%),
+    smoke: hsl(0, 0%, 40%),
     dark: hsl(255, 0%, 0%)
   ),
 );
